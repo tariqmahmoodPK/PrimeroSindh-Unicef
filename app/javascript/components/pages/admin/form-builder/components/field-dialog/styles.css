@@ -1,0 +1,46 @@
+.fieldDialog {
+  & h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  & div {
+    padding: 0
+  }
+}
+
+.cancelButton {
+  background: $(theme.primero.colors.grey);
+  color: $(theme.primero.colors.white);
+  margin: 0 .5em;
+
+  &:hover {
+    color: $(theme.primero.colors.black);
+    background-color: $(theme.primero.colors.warmGrey5);
+  }
+}
+
+.hiddenField {
+  display: none;
+}
+
+.boldLabel {
+  font-weight: bold;
+}
+
+.anotherFormLabel {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.subformFieldTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+
+  & h1 {
+    flex: 1
+  }
+}

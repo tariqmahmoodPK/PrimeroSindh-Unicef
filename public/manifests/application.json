@@ -1,0 +1,25 @@
+{
+  "application.js": "http://localhost:9000/application.9810c1f084c5ad6d9474.js",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "http://localhost:9000/vendor.de288cab98716728e9bf.js",
+        "http://localhost:9000/application.9810c1f084c5ad6d9474.js"
+      ]
+    }
+  },
+  "images/GB_Govt_Logo.png": "http://localhost:9000/images/f944bee7506b0f9db048c15a61a81ed7.png",
+  "images/cpims-logo-white.png": "http://localhost:9000/images/6363a95aee4c3381c0b330f26c38f90d.png",
+  "images/cpims-logo.png": "http://localhost:9000/images/0cfa4fe7ac31fbf8bc7be5f48da51ea1.png",
+  "images/cpims-pictorial.png": "http://localhost:9000/images/254590044db3841a1f0fd5816b807a9b.png",
+  "images/direc.pdf": "http://localhost:9000/images/4f9c7727d4e2b801523c01d8f9f32512.pdf",
+  "images/gbv-logo-white.png": "http://localhost:9000/images/9ea9e52a652d92d14f96a32429d9b0ad.png",
+  "images/gbv-logo.png": "http://localhost:9000/images/c6e8a36e304076728ffb0201cd9aa0af.png",
+  "images/gbv-pictorial.png": "http://localhost:9000/images/155e435382fdd59651b08edd37bce331.png",
+  "images/mrm-logo-white.png": "http://localhost:9000/images/5214fec8889d55fe769757cea55689eb.png",
+  "images/mrm-logo.png": "http://localhost:9000/images/8e5e27a466efbe322cef906ce2972e17.png",
+  "images/primero-logo-white.png": "http://localhost:9000/images/7d44258a9e3e55062054bf8f4a682ca5.png",
+  "images/primero-logo.png": "http://localhost:9000/images/5a914e37db47cfc4b74f179b57fbf7cd.png",
+  "images/primero-pictorial.png": "http://localhost:9000/images/363c20ca05771ad3b49bff50b9ab6178.png",
+  "vendor.js": "http://localhost:9000/vendor.de288cab98716728e9bf.js"
+}

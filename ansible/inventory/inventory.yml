@@ -1,0 +1,34 @@
+---
+all:
+  hosts:
+    cpims-ict.septemsystems.com:
+      ansible_user: 'deploy'
+      primero_host: 'cpims-ict.septemsystems.com'
+      primero_tag: 'latest'
+      locale_all: 'en,fr,ar'
+      #always_pull: true,
+      postgres_password: primero
+      # These 3 variables are used to drive the build task.
+      # Can be omitted if pulling images from Dockerhub
+      primero_repo_branch: 'staging'
+      build_docker_tag: 'ict'
+      build_docker_container_registry: ''
+      # If you want to seed from a private configuration repo
+      # primero_configuration_repo: 'git@github.com:brishnabatool/primero-pakistan.git'
+      # primero_configuration_repo_branch: 'staging'
+      # primero_configuration_path: 'directory/of/config/loader/script'
+      use_lets_encrypt: 'true'
+      # The other certbot/lets_encrypt variables are optional. Include only if using Let's Encrypt
+      certbot_domain:
+      - '{{ primero_host }}'
+      certbot_email: 'sara.raza@xprolabs.com'
+      lets_encrypt_domain: '{{ primero_host }}'
+      lets_encrypt_email: '{{ certbot_email }}'
+      # Different for self-signed certs
+      nginx_ssl_cert_path: '/etc/letsencrypt/live/primero/fullchain.pem'
+      nginx_ssl_key_path: '/etc/letsencrypt/live/primero/privkey.pem'
+      # Optionally parametrize Primero containers with other environment attributes.
+      # Do not use this dictionary for secrets!!!
+      environment_variables:
+        PRIMERO_DEFAULT_USERS: 'true' # Seed default users when using the managed Primero SaaS configs
+        # LOCALE_DEFAULT: 'ar' # Optionally override English as the default locale.

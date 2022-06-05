@@ -1,0 +1,841 @@
+id:
+  'true': 'Ya'
+  'false': 'Tidak'
+  cancel: Batal
+  clear: Bersihkan
+  description: Deskripsi
+  yes_label: 'Ya'
+  actions:
+    button: Tindakan
+    description:
+      invalid: Data tidak valid
+      valid: Data Valid
+    disable: Nonaktifkan
+    enable: Aktif
+    incident_details_from_case: Tambahkan Kejadian
+    reopen: Buka kembali
+    services_section_from_case: Tambahkan Pemberian Layanan
+  agencies:
+    label: Agensi
+  agency:
+    code: Kode Agensi
+    name: Nama Agensi
+    services: Layanan Lembaga
+  approvals:
+    status:
+      approved: Disetujui
+      pending: Tertunda
+      rejected: Ditolak
+  audit_log:
+    action: Tindakan
+    description: Deksripsi
+    record_owner: Penanggungjawab Catatan Kasus
+  bulk_export:
+    file_name: File
+    record_type: Tipe
+    retry: Ekspor ini tidak valid Silakan mencoba menciptakan kembali ekspor Anda.
+    started_on: Dimulai
+    status: Status
+  buttons:
+    accept: Terima
+    add_note: Tambahkan Catatan
+    approvals: Persetujuan
+    approve_bia: Setujui BIA
+    approve_case_plan: Setujui Rencana Kasus
+    approve_closure: Setujui Terminasi
+    back: Kembali
+    bundle_export: Paket Konfigurasi
+    bundle_import: Paket Konfigurasi
+    cancel: Batal
+    change_password: Ganti Kata Sandi
+    create_case: Buat Data Kasus
+    create_incident: Buat Data Insiden
+    create_new_record: Buat %{model} baru
+    delete: Hapus
+    disable: Nonaktifkan
+    disable_photo_wall: Nonaktifkan dinding foto
+    done: Selesai
+    edit: Ubah
+    edit_subform: Ubah sub formulir
+    enable: Aktif
+    enable_photo_wall: Aktifkan Foto Profil
+    export: Ekspor
+    filter: Terapkan Filtrasi
+    filter_clear: Hapus Filter
+    filter_label: 'Filter:'
+    filter_restore: Kembalikan ke Pengaturan Sistem
+    find_tracing_match: Temukan Kecocokan Penelusuran
+    flag_model: Bendera %{model}
+    flag_records: Bendera
+    import: Impor
+    login: Masuk
+    mark_for_mobile: Tandai untuk seluler
+    ok: OK
+    reject: Tolak
+    remove_referrals: Hapus rujukan
+    request_approval: Minta Persetujuan
+    request_transfer: Permintaan Pemindahan
+    reunite: Menyatukan kembali
+    save: Simpan
+    save_and_add_service_provision: Save dan Tambahkan Layanan
+    sort_by_case: Kasus
+    sort_by_tr: Permintaan Penelusuran
+    submit: Kirim
+    unflag_model: Tidak ditandai Bendera %{model}
+    unflag_model_history: Tandai Bendera Sejarah %{model}
+    unmark_for_mobile: Tidak ditandai untuk seluler
+    view: Lihat
+    view_flags_history: Lihat Riwayat
+  case:
+    create_new_case: Buat Kasus Baru
+    enter_id_number: Masukkan nomor ID untuk mencari catatan kasus yang telah ada
+    messages:
+      update_success: 'Kasus %{record_id} telah berhasil diperbarui.'
+      creation_success: 'Kasus %{record_id} telah berhasil dibuat.'
+    workflow:
+      assessment: Asesmen
+      case_plan: Rencana Kasus
+      closed: Tutup
+      created_on: Dibuat pada
+      in_progress: Dalam Penanganan
+      new: Baru
+      on_label: 'di'
+      reopened: Dibuka Kembali
+      service_implemented: Layanan telah Dilakukan
+      services_implemented: Layanan telah Dilakukan
+  cases:
+    apply_filter: Terapkan
+    clear_filter: Bersihkan
+    export: Ekspor
+    filter_by:
+      3month_inactivity: Untuk 3+ bulan
+      approvals:
+        approved: Disetujui
+        rejected: Ditolak
+      date: Tanggal
+      female: Perempuan
+      flag_label: Ditandai Bendera?
+      male: Laki-Laki
+      mobile_label: Tandai untuk seluler?
+      my_cases: Data Kasus Saya
+      no_activity: Tidak ada aktifitas
+      photo_label: Punya Foto?
+      referred_cases: Kasus yang direferensikan ke saya
+      workflow: Kasus-kasus berdasar Alur Penanganan
+    flag_summary: Tandai Bendera di Ringkasan
+    hide_name: Sembunyikan Nama
+    hide_name_error: Terjadi kesalahan saat menyimpan perubahan Anda. Silahkan coba lagi
+    label: Kasus
+    my_filters: Saringan saya
+    ok: OK
+    order_by:
+      label: Urut Berdasarkan
+      most_recently: Baru-baru saja
+      name: Nama
+    quick_view:
+      tracing_message: 'Catatan: Ada kecocokan data dengan Seseorang yang sedang mencari anak ini. Jika anak menyetujui, hubungi Pekerja Sosial yang menangani kasus ini untuk menindaklanjutinya.'
+    register_new_case: Kasus Baru
+    save_filter: Simpan
+    view_name: Tampilkan Nama
+  children:
+    selectable_date_options:
+      assessment_requested_on: Tanggal asesmen
+      closure_approved_date: 'Tanggal Penutupan Kasus'
+      created_at: Tanggal Buka Kasus
+      date_case_plan_initiated: Tanggal Perencanaan Kasus
+      registration_date: Tanggal pendaftaran
+  contact:
+    field:
+      email: Surel
+      location: Lokasi
+      name: Nama
+      organization: Organisasi
+      other_information: Informasi Lainnya
+      phone: Telepon
+      position: Posisi
+      support_forum: Forum Dukungan
+    info_label: Informasi Kontak
+    updated: Informasi kontak berhasil diupdate.
+  dashboard:
+    activity: Aktifitas
+    admin_only: Klik %{links} untuk membuat perubahan pada aplikasi
+    all_cases: Seluruh Kasus
+    all_services_implemented: Semua layanan dilaksanakan
+    and: 'dan'
+    approvals: Persetujuan
+    approved: Disetujui
+    assessment: Asesmen
+    case_id: '#ID Kasus'
+    case_plan: Rencana Kasus
+    case_stat_by_approval_type: Persetujuan
+    case_stat_by_assessment_level: Kasus berdasarkan Tingkat Penilaian
+    case_stat_referrals: Rujukan
+    case_stats: Kasus
+    case_worker: Pekerja Kasus
+    cases_by_social_worker: Kasus berdasarkan pekerja sosial
+    cases_by_task_overdue: Tugas-tugas yang Melampaui Tenggat Waktu
+    cases_by_workflow: Kasus berdasar Alur Penanganan
+    cases_this_week: Kasus Minggu Ini
+    cases_to_assign: Kasus yang akan ditetapkan penugasannya
+    closed: Tutup
+    comprehensive_need_intervention: Respon Komprehensif
+    current_owner: Pemilik saat ini
+    date: Tanggal
+    date_of_incident: Tanggal dari Insiden
+    date_of_interview: Tanggal Wawancara
+    due: Melampaui Tenggat Waktu
+    flagged_by: 'Ditandai Bendera Oleh'
+    flagged_by_me: Ditandai dengan Bendera oleh Saya
+    flagged_by_other: Ditandai dengan Bendera oleh Orang lain
+    follow_up: Menindaklanjuti
+    forms: tab FORM
+    geographic_area: Area Geografis
+    high_risk: Prioritas Tinggi
+    immediate_response: Respon Segera
+    incident_id: '#ID Insiden'
+    incident_location: Lokasi Insiden
+    incident_status_open: Buka
+    last_updated: Terakhir diperbarui
+    link_see_all: Lihat Semua
+    low_risk: Prioritas Rendah
+    match_result: Hasil Pencocokan
+    medium_risk: Prioritas Sedang
+    missed_cases: Kasus yang Terlewatkan
+    name: Nama
+    name_or_survivor_code: Nama atau Kode Survivor
+    near_deadline: Mendekati Tenggat Waktu
+    new: Baru dan Telah Diperbarui
+    new_child_assigned_to_you: Kasus Baru yang Ditugaskan Untuk Anda
+    new_incident: Kejadian Baru
+    new_incident_assigned_to_you: Insiden Baru yang Ditugaskan
+    new_referred: Rujukan Baru
+    new_service_provision: Pemberian Layanan Baru
+    no_action_risk: Tak Perlu Tindakan
+    no_case_stats: Tidak ada statistik kasus
+    no_caseworker_data: Tidak ada data Pekerja Kasus
+    no_flagged_child: Tidak ada Data kasus yang ditandai dengan Bendera
+    no_flagged_incident: Tidak ada Data Insiden yang ditandai dengan Bendera
+    no_open_incidents: Tidak ada Insiden terbuka
+    no_overdue_activities: Tidak ada Aktifitas yang Terlambat
+    no_recent_activities: Tidak ada Aktifitas Terkini
+    no_scheduled_activities: Tidak ada Aktifitas Terjadwal
+    none_risk: Bukan Prioritas
+    number_of_victims: Jumlah Korban
+    number_of_violations: Jumlah Kekerasan
+    number_of_violations_verified: Pelanggaran Diverifikasi
+    open: Buka
+    open_cases: Kasus yang terbuka
+    open_incidents: Buka Insiden
+    overdue_activities: Aktivitas Terlambat
+    overdue_cases_to_assign: Kasus lewat batas waktu yang akan ditetapkan penugasannya
+    pending: Tertunda
+    pending_transfers: Pengalihan yang Ditunda
+    protection_concern: Masalah Perlindungan
+    protection_concerns: Masalah perlindungan
+    range12+: 12+
+    range4: 0-4
+    range4_8: 4-8
+    range8_12: 8-12
+    recent_activities: Aktivitas Terkini
+    recently_flagged_child: Data Kasus yang Baru Ditandai dengan Bendera
+    recently_flagged_incident: Data Insiden yang Baru Ditandai dengan Bendera
+    referrals_by_social_worker: Arahan oleh pekerja sosial
+    rejected: Ditolak
+    rejected_transfers: Pengalihan yang Ditolak
+    scheduled_activities: Aktivitas Terjadwal
+    score_range: Rentang Nilai
+    services: Layanan
+    services_implemented: Layanan yang dilaksanakan
+    status_of_cases: Status Kasus
+    system_user: Sistem
+    total: Total
+    total_cases: Total Jumlah Kasus
+    total_referred: Total Rujukan
+    tr_stats: Permintaan Penelusuran
+    transers_awaiting_acceptance: Pengalihan sedang Menunggu Persetujuan
+    transfers_by_social_worker: Dialihkan oleh Pekerja Sosial
+    users: tanda PENGATURAN
+    violence_type: Jenis Kekerasan
+    you_have: 'Anda memiliki'
+  disabled:
+    status:
+      disabled: Dinonaktifkan
+      enabled: Diaktifkan
+  email_notification:
+    approval_request: 'Pengguna %{user} meminta persetujuan %{approval_type} untuk kasus %{case_id}.'
+    approval_request_subject: 'Kasus: %{id} - Permintaan Persetujuan'
+    approval_response: '%{user} telah %{status} terhadap permintaan persetujuan %{approval_type} untuk kasus %{case_id}.'
+    approval_response_subject: 'Kasus: %{id} - Tanggapan Persetujuan'
+    referral: '%{user} dari %{agency} telah merujuk %{record_type} berikut kepada Anda: %{record_id} untuk %{service_type}.'
+    transfer: '%{user} telah mengalihkan %{record_type} berikut kepada anda: %{record_id}.'
+    transfer_request_subject: Permintaan Pengalihan untuk Salah Satu dari Kasus Anda
+    transfer_subject: '%{record_type} : %{id} - Pengalihan'
+    referral_subject: '%{record_type} : %{id} - Rujukan '
+    transfer_request: 'Pengguna Primero %{user} dari %{agency} meminta Anda untuk mengalihkan tanggungjawab catatan %{record_type} kasus %{record_id} agar mereka bisa mengelola catatan %{record_type} dan pelayanan untuk individu di wilayah mereka. Jika Anda menyetujui pengalihan ini, silahkan klik tautan ID %{record_type} di email ini untuk membuka %{record_type} di Primero dan memulai proses pengalihan.'
+    approval_request_html: 'Pengguna <strong>%{user}</strong> meminta persetujuan  <strong>%{approval_type}</strong> untuk kasus  <strong>%{case_id} </strong>.'
+    approval_response_html: '<strong>%{user}</strong> telah <strong>%{status}</strong> terhadap permintaan persetujuan <strong>%{approval_type}</strong> untuk kasus <strong>%{case_id}</strong>.'
+    referral_html: '<strong>%{user}</strong> dari %{agency} telah merujuk  %{record_type} berikut kepada Anda: <strong>%{record_id}</strong> untuk %{service_type} '
+    transfer_html: '<strong>%{user}</strong> telah mengalihkan %{record_type} berikut kepada Anda: <strong>%{record_id}</strong>.'
+    transfer_request_html: 'Pengguna Primero <strong>%{user}</strong> dari %{agency} meminta Anda untuk menyerahkan tanggungjawab atas %{record_type} dari <strong>%{record_id}</strong> agar mereka dapat melakukan pengelolaan layanan %{record_type} bagi individu di wilayah mereka. Jika Anda menyetujui pengalihan ini, silahkan klik tautan ID %{record_type}  di email ini untuk membuka catatan %{rescord_type} di Primero dan memulai proses pengalihan.'
+    transfer_request_notes_html: 'Catatan dari individu yang mengajukan %{request_transfer_notes}'
+  encrypt:
+    file_name: Buat nama file Anda sendiri (Opsional)
+    password_label: Silahkan masukkan password yang akan meng-enkripsi data
+  error_page:
+    not_found:
+      contact_admin: Jika Anda yakin Anda berada di sini karena kesalahan, silahkan hubungi admin.
+      something_went_wrong: Ma'af, Ada Kesalahan!
+  errors:
+    models:
+      child:
+        age: Umur harus antara 0 dan 130
+        date_of_birth: Silahkan masukkan tanggal lahir yang benar untuk data kasus ini
+      export_configuration:
+        opt_out_field_does_not_exist: Bidang opt_out yang ditentukan tidak ada pada catatan.
+        record_type: Jenis catatan tidak valid. Harus Kasus Anak, Permintaan Penelusuran, atau Insiden.
+      field:
+        translated_options_do_not_match: Pilihan-pilihan bidang harus memiliki ID yang sama
+      location:
+        admin_level_present: Tidak boleh kosong
+        code_present: Tidak boleh kosong
+        name_present: Tidak boleh kosong
+        unique_location_code: Lokasi dengan kode lokasi tersebut sudah ada, masukkan kode lokasi yang berbeda
+      lookup:
+        being_used: Referensi ini sedang digunakan dan tidak dapat dihapus
+        name_present: Nama tidak boleh kosong
+      primero_module:
+        associated_record_types: Setidaknya satu jenis rekaman harus dikaitkan dengan modul ini
+        name_present: Nama tidak boleh kosong
+        unique_name: Sebuah modul dengan nama itu sudah ada, mohon masukkan nama yang berbeda
+      report:
+        module_presence: Modul tidak boleh kosong
+        module_syntax: Semua modul laporan harus sudah tersedia
+        name_presence: Nama tidak boleh kosong
+      role:
+        permission_presence: Harap pilih setidaknya satu izin
+      user:
+        password_mismatch: Kolom kata sandi tidak memiliki kata sandi yang sama
+  exports:
+    case_pdf:
+      all: PDF
+      one: PDF
+      selected: Dipilih untuk PDF
+    csv:
+      all: CSV
+      one: CSV
+      selected: Dipilih untuk CSV
+    custom_exports:
+      choose_fields: Apakah Anda ingin memilih kolom individu untuk formulir?
+      empty_fields_forms: Silahkan pilih beberapa form atau kolom untuk ekspor
+      empty_format: Silahkan pilih sebuah format untuk ekspor
+      empty_module: Silahkan pilih sebuah module untuk ekspor
+      empty_password: Masukkan kata sandi yang akan mengenkripsi file anda.
+      field_label: Kolom
+      fields: Pilih Kolom untuk ekspor
+      form_label: Formulir
+      format_label: Pilih Format
+      forms: Pilih Form untuk ekspor
+      label: Kustom Ekspor
+      module_placeholder: Silahkan pilih sebuah modul
+      select_module: Pilih modul
+      submit: OK
+    duplicate_id_csv:
+      all: Duplikat ID
+      female_abbreviation: P
+      headers:
+        age: Umur
+        case_id: ID Kasus
+        child_name_last_first: Nama Anak
+        family_size: Ukuran Keluarga
+        moha_id: NIK RUSAK
+        national_id_no: Nomor KTP
+        progress_id: Progress ID
+        sex_mapping_m_f_u: Jenis Kelamin
+      male_abbreviation: L
+      unknown_abbreviation: U
+    forms:
+      button: Ekspor Formulir
+      label: Ekspor
+    json:
+      all: JSON
+      one: JSON
+      selected: Dipilih untuk JSON
+    list_view_csv:
+      all: Ekspor Tampilah Daftar
+      selected: Dipilih untuk CSV
+    mrm_violation_xls:
+      all: Pelanggaran MRM
+      one: Pelanggaran MRM
+      selected: Dipilih untuk Pelanggaran MRM
+    no_records: Tidak ada Data yang tersedia!
+    pdf:
+      one: PDF
+      selected: Dipilih untuk PDF
+    pdf_exports:
+      label: PDF
+    photowall:
+      all: Foto Dinding
+      one: Foto Dinding
+      selected: Dipilih ke Foto Dinding
+    selected_xls:
+      all: Excel
+      one: Excel
+      selected: Dipilih untuk Excel
+    unhcr_csv:
+      all: UNHCR
+      female_abbreviation: P
+      headers:
+        age: Umur
+        case_status: Status Kasus
+        causes_of_separation: Penyebab Keterpisahan
+        country_of_origin: Negara Asal
+        cpims_code: Kode CPIMS
+        current_care_arrangement: Bentuk Pengasuhan Saat ini
+        date_of_birth: Tanggal Lahir
+        date_of_identification: Tanggal Identifikasi
+        family_count_no: Nomor Kartu Keluarga
+        governorate_country: Provinsi
+        id: ID
+        individual_progress_id: ID progres individual
+        locations_by_level: Alamat (Pengungsian, Blok, Huntara, atau lainnya atau koordinat GPS)
+        long_id: ID Lengkap
+        moha_id: NIK
+        name_of_caregiver: Nama Lengkap Pengasuh
+        name_of_child_last_first: Nama Lengkap Anak
+        primary_protection_concerns: Masalah Perlindungan Anak yang Utama
+        progres_id: ID Kemajuan
+        reunification_status: Status Reunifikasi
+        secondary_protection_concerns: Masalah Perlindungan Anak Sekunder
+        sex: Jenis Kelamin
+        sex_mapping_m_f_u: Jenis Kelamin
+        short_id: ID Ringkas
+        vulnerability_code: Bentuk Kerentanan
+        vulnerability_details_code: Rincian Bentuk Kerentanan
+      male_abbreviation: L
+      one: UNHCR
+      selected: Dipilih untuk UNHCR
+      unknown_abbreviation: U
+    xlsx:
+      all: Excel
+      one: Excel
+      selected: Dipilih untuk Excel
+  fields:
+    action: Tindakan
+    actions: Tindakan
+    add: Tambah
+    audio:
+      current: Audio yang ada
+    check_box: Kotak centang
+    date_field: Kolom Tanggal
+    date_help: dd-mmm-yyyy
+    date_help_with_time: hh-bbb-tttt jj:mm
+    date_not_valid: Tanggal ini tidak valid
+    date_range:
+      date: Tanggal
+      date_range: Rentang Tanggal
+      from: Dari
+      to: Untuk
+    date_range_field: Rentang Tanggal
+    default_date_validation: Validasi tanggal default
+    deleted: Kolom %{display_name} sudah dihapus.
+    display_name: Nama Tampilan
+    document:
+      comments: Komentar
+      current: Apakah ini dokumen terbaru?
+      date: Tanggal Dokumen
+      name: Nama Dokumen
+    field_name: Nama Kolom
+    file_upload_box:
+      add_new_document_button_text: Tambah dokumen lain
+      add_new_photo_button_text: Tambah photo lain
+      add_photo_label: Tambah Photo
+      document_description: Deskripsi Dokumen
+      document_file_restrictions_message: File seharusnya tidak lebih besar dari 2 MB (file executable (exe) tidak dapat diunggah).
+      no_file_selected: Tidak ada dokumen dipilih
+      photo_file_restrictions_message: Foto seharusnya tidak lebih besar dari 10mb. File audio seharusnya tidak lebih besar dari 10mb. Semakin kecil semakin baik.
+      recorded_audio_label: Rekaman Suara
+      select_file_button_text: Pilih Dokumen
+    form_name: Nama Formulir
+    help_text: Teks bantuan
+    label: Kolom
+    move_to: Pindah ke
+    not_future_date: Bukan tanggal yang akan datang
+    number_not_valid: Silahkan masukkan data angka
+    numeric_field: Kolom angka
+    option_strings_add_option: Tambah Pilihan
+    option_strings_source: Lihat Referensi
+    option_strings_text: Pilihan
+    option_strings_text_display: Teks Pilihan
+    option_strings_text_key: Kunci Pilihan
+    options_or_lookup_warning: Tambahkan Pilihan atau pilih Lookup. Jangan kedua-duanya.
+    radio_button: Tombol radio
+    remove: Hapus
+    select_box: Pilih Kombo Pilihan
+    select_date_validation: Pilih metode validasi tanggal
+    separator: Pemisah
+    subform: Subform
+    subform_remove_message: Yakin ingin menghapus subform ini?
+    successfully_added: Kolom berhasil ditambahkan
+    tally_field: Kolom yang sesuai
+    text_area: Area Teks
+    text_field: Kolom Teks
+    textarea: Area Teks
+    tick_box: Kotak centang
+    tick_box_label: Label Kotak centang
+    updated: Kolom diperbarui
+  followup_reminders:
+    system_generated_followup_flag: Kunjungan tindak lanjut wajib
+  form_section:
+    name: Nama
+    required_field: '%{field} wajib'
+  forms:
+    label: Formulir
+    messages:
+      use_existing: Kami mendorong Anda untuk menggunakan formulir yang ada karena ini membuat data sharing dan penggabungan data antar institusi menjadi lebih mudah.
+    record_types:
+      case: Kasus
+      child: Kasus
+      incident: Insiden
+      potential_match: Potensi Kecocokan
+      reportable_follow_up: Menindaklanjuti
+      reportable_protection_concern: Masalah Perlindungan
+      reportable_service: Pelayanan
+      tracing_request: Permintaan Penelusuran
+      violation: Pelanggaran
+  home:
+    ar: العربية
+    ar-IQ: العربية (العراقية)
+    ar-LB: العربية (اللبنانية)
+    bn: বাংলা
+    current_time_zone: Zona waktu setempat
+    dashboard: Dashboard
+    en: English
+    es: Español
+    fr: Français
+    id: Bahasa
+    ku: کوردی
+    ku-IQ: کوردی (بادینی)
+    label: Beranda
+    language: Bahasa
+    manage_system_users: Mengelola Pengguna Sinkronisasi Server
+    my: ဗမာစာ
+    records_need_attention: Data yang perlu perhatian
+    ru: Русский
+    so: Af-Soomaali
+    th: ไทย
+    users: Kelola Para Pengguna
+    view_records: Lihat Data
+    welcome: Selamat Datang di Primero
+    zh: 中文
+  incident:
+    messages:
+      update_success: 'Data Insiden %{record_id} berhasil diubah.'
+  incidents:
+    label: Insiden
+    filter_by:
+      boys: Anak laki-laki
+      girls: Anak perempuan
+      unknown: Tidak diketahui
+    register_new_incident: Insiden Baru
+    selectable_date_options:
+      date_of_first_report: Tanggal Wawancara
+      incident_date_derived: Tanggal Kejadian
+  location:
+    base_types:
+      camp: Kemah
+      chiefdom: Kepala Sekolah
+      city: Kota
+      country: Negara
+      county: Negara
+      district: 'Kabupaten/Kota:'
+      governorate: Gubernur
+      locality: Tempat dan sekitarnya
+      other: Lainnya
+      province: Provinsi
+      region: Wilayah
+      site: Tempat
+      state: Negara Bagian
+      sub-district: Kecamatan
+      village: Desa
+      zone: Zona
+  logger:
+    approve_form:
+      bia: Formulir BIA
+      case_plan: Formulir Rencana Kasus
+      closure: Formulir Terminasi
+      'false': Menolak
+      'true': Menyetujui
+    by_user: dari pengguna
+    consent_count: Jumlah Persetujuan
+    copy: Menyalin
+    create: Membuat
+    create_subform: Membuat Sub-Form
+    destroy: Menghapus
+    edit: Mengubah
+    export: Mengekspor data untuk
+    flag: Tandai dengan Bendera
+    flag_records: Tandai dengan Bendera
+    graph_data: Melihat data grafik
+    hide_name:
+      protect: Sembunyikan Nama
+      view: Tunjukkan Nama
+    index: Membuat Daftar Data Catatan
+    login: Masuk
+    logout: Keluar
+    lookups_for_field: Cari untuk kolom
+    mark_for_mobile:
+      'false': Tidak ditandai untuk seluler
+      'true': Tandai untuk seluler
+    match_record: Mencocokkan Data Catatan
+    permitted_field_list: Daftar kolom yang diizinkan
+    quick_view: Melihat Tampilan Cepat
+    reassign: Menugaskan
+    record_state:
+      'false': Nonaktifkan
+      'true': Aktifkan
+    referral: Merujuk
+    relinquish_referral: Mempublikasikan rujukan yang selesai
+    reopen_case: Membuka kembali
+    request_approval:
+      bia: Meminta Persetujuan untuk formulir BIA
+      case_plan: Meminta Persetujuan untuk formulir Rencana Kasus
+      closure: Meminta Persetujuan untuk formulir Terminasi
+    request_transfer: Mengirim Permintaan Pengalihan
+    request_transfer_view: Melihat Pemindahan Permintaan
+    save_subform: Menyimpan Sub-Form
+    show: Melihat
+    to: untuk
+    to_user: untuk pengguna
+    transfer: Memindahkan
+    transfer_status:
+      Accepted: Pemindahan yang diterima
+      Rejected: Pemindahan yang ditolak
+    unflag: Tidak ditandai dengan bendera
+    update: Memperbaharui
+  login:
+    label: Masuk
+    password:
+      label: Kata sandi
+    username: Nama Pengguna
+  lookup:
+    create: Referensi Baru
+    label: Lihat Referensi
+    messages:
+      cannot_create: Referensi tidak bisa dibuat
+      correct_errors: 'Perbaiki kesalahan berikut dan kirimkan lagi:'
+    name: Nama
+    values: Pilihan
+  messages:
+    confirmation_message: Menekan tombol OK akan membuang perubahan yang belum disimpan dan kembali ke tampilan daftar. Tekan tombol BATAL untuk kembali ke data.
+  navigation:
+    search: Cari
+  permissions:
+    label: Izin
+    permission:
+      All: Semua
+      add_note: Tambahkan Catatan
+      admin_only: Tidak ada data - Hanya untuk Admin
+      administrator_read: Administrator Baca
+      agency: Agensi
+      agency_read: Pembacaan Agensi
+      all: Akses semua data atau pengguna
+      assign: Menugaskan
+      assign_within_agency: Tugaskan dalam lembaga
+      assign_within_user_group: Tugaskan dalam kelompok pengguna
+      audit_log: Audit Log
+      case: Kasus
+      consent_override: Persetujuan diganti
+      copy: Salin
+      create: Buat
+      dash_cases_by_social_worker: Tinjau Kasus-kasus berdasar Pekerja Sosial
+      dash_cases_by_task_overdue: Tinjau Kasus yang Mengalami Keterlambatan
+      dash_cases_by_workflow: Tinjau Kasus berdasar Alur Penanganan
+      dash_cases_to_assign: Tinjau Kasus untuk Ditetapkan Penugasannya
+      dash_manager_transfers: Tinjau Pengalihan Manajer Kasus
+      dash_matching_results: Tinjau Hasil Pencocokan
+      dash_protection_concerns: 'Lihat Masalah perlindungan:'
+      dash_referrals_by_socal_worker: Tinjau Rujukan berdasar Pekerja Sosial
+      dash_reporting_location: Lihat Lokasi Laporan
+      dash_service_provisions: Tinjau Pemberian Layanan
+      dash_tasks: Tinjau tugas-tugas
+      dash_transfers_by_socal_worker: Tinjau Pengalihan berdasar Pekerja Sosial
+      dashboard: Dashboard
+      display_view_page: Tampilkan Tinjauan Halaman
+      duplicate: Pencarian Duplikat
+      enable_disable_record: Nonaktifkan
+      export_case_pdf: Ekspor kasus ke PDF
+      export_csv: Ekspor CSV
+      export_custom: Ekspor kustomisasi
+      export_duplicate_id_csv: Eksport Duplikat
+      export_json: Ekspor json
+      export_list_view_csv: Tampilan daftar ekspor csv
+      export_mrm_violation_xls: Ekspor Kekesaran mrm xls
+      export_pdf: Ekspor PDF
+      export_photowall: Ekspor Foto Dinding
+      export_unhcr_csv: Ekspor unhcr csv
+      export_xls: Ekspor XLS
+      find_tracing_match: Temukan kecocokan penelusuran dari kasus
+      flag: Tandai dengan Bendera
+      form: Formulir
+      group: Akses semua data atau pengguna di grup saya
+      group_read: Grup Baca
+      import: Impor
+      incident: Insiden
+      incident_details_from_case: Tambahkan Rincian Kejadian untuk Kasus Milik Pengguna Lain
+      incident_from_case: Buat insiden dari sebuah kasus
+      lookup: Lihat Referensi
+      manage: Kelola
+      matching_configuration: Pengaturan Pencocokan
+      metadata: Formulir, Lihat Referensi
+      potential_match: Potensi Kecocokan
+      read: Baca
+      reassign: Menugaskan kembali
+      referral_from_service: Rujuk Kasus dari Form Layanan
+      remove_assigned_users: Hapus pengguna lain (kasus rujukan)
+      report: Laporan
+      request_approval: Meminta persetujuan
+      request_transfer: Permintaan Pemindahan
+      role: Peran
+      save_search: Simpan Pencarian
+      saved_search: Pencarian yang tersimpan
+      search_owned_by_others: Cari catatan kasus milik pengguna lain
+      self: Akses hanya data saya atau pengguna
+      service_provision_incident_details: Lihat Tobol Penambahan Penyediaan Layanan di Mode Rincian Layanan
+      services_section_from_case: Tambahkan pemberian layanan untuk kasus milik pengguna lain
+      specific_roles: Akses daftar peran yang ditentukan
+      sync_mobile: Sinkronisasi dengan perangkat seluler
+      system: Sistem
+      tracing_request: Permintaan Penelusuran
+      user: Pengguna
+      user_group: Grup Pengguna
+      view_approvals: Lihat Persetujuan
+      view_assessment: Lihat Penilaian
+      view_photo: Lihat Foto
+      view_protection_concerns_filter: Tinjau Filter Masalah Perlindungan Anak
+      view_response: Tinjau Respons
+      write: Tulis
+  potential_match:
+    child_age: Umur
+    child_gender: Gender
+    child_id: '#id anak'
+    inquirer_id: ID# Penyelidik
+    inquirer_tr_name: Permintaan Penelusuran
+    inquiry_date: Tanggal Penyelidikan
+    name: Nama
+    score: Nilai
+    social_worker: Pekerja Sosial
+    social_worker_agency: Agensi
+  potential_matches:
+    display: Menampilkan kecocokan yang mungkin ada untuk %{type} %{id}
+  reassign:
+    notes_label: Catatan
+  record_panel:
+    record_information: Informasi Data
+  referral:
+    agency_label: Agensi
+    is_remote_label: Apakah Anda mengacu pada sistem remote?
+    location_label: Lokasi
+    notes_label: Catatan
+    service_label: Layanan
+    success: '%{record_type} %{id} berhasil dirujuk'
+  report:
+    aggregate_by: Grup berdasarkan Baris
+    date_ranges:
+      date: Hari
+      month: Bulan
+      week: Minggu
+      year: Tahun
+    description: Deksripsi
+    disaggregate_by: Grup berdasarkan Kolom
+    filters:
+      label: Laporan Filter
+    group_ages: Gunakan rentang usia
+    group_dates_by: Gunakan rentang tanggal
+    is_graph: Buat grafik?
+    messages:
+      delete_success: Laporan sudah berhasil di hapus
+    modules: Modul
+    name: Nama
+    no_data: Tidak ada data untuk laporan ini
+    record_type: Jenis Data
+    total: Total
+  reports:
+    label: Laporan
+    register_new_report: Buat Laporan
+  request_transfer:
+    notes_label: Catatan
+    submit_label: Kirim Permintaan
+    success: Permintaan Pengalihan telah Dikirim
+  role:
+    copy_failure: Kesalahan saat menyalin Peran Pastikan namanya tidak bertentangan dengan Peran lain.
+    copy_success: Peran berhasil disalin.
+    create: Buat Peran
+    description: Deskripsi
+    edit: Ubah Peran
+    error_in_updating: Kesalahan dalam memperbarui detail Peran.
+    group_permission_label: Data apa yang mempengaruhi peran ini?
+    name: Nama
+    referral_label: Dapatkah peran ini digunakan untuk Referral?
+    role_ids_label: Peran lainnya dikelola oleh peran ini
+    successfully_updated: Rincian peran berhasil diperbarui.
+    transfer_label: Dapatkah peran ini digunakan untuk Transfer?
+  roles:
+    label: Peran
+  saved_search:
+    deleted: Pencarian berhasil dihapus
+    filters_tab: Saringan
+    save_success: Pencarian berhasil disimpan
+    saved_searches_tab: Pencarian yang Tersimpan
+  saved_searches:
+    no_save_searches: Anda tidak memiliki pencarian yang tersimpan
+    save_search: Simpan Pencarian
+  system_settings:
+    label: Pengaturan sistem
+  task:
+    due_date: Tanggal Batas Waktu
+    id: ID#
+    priority: Tingkat Prioritas
+    type: Jenis Tindakan
+    types:
+      assessment: Asesmen
+      case_plan: Rencana Kasus
+      follow_up: Tindak Lanjut - %{subtype}
+      service: Layanan - %{subtype}
+  tracing_request:
+    messages:
+      update_success: 'Permintaan Penelusuran %{record_id} telah berhasil diperbarui.'
+  tracing_requests:
+    register_new_tracing_request: Permintaan Penelusuran Baru
+    selectable_date_options:
+      inquiry_date: Tanggal Penyelidikan
+  transfer:
+    agency_label: Agensi
+    consent_label: Data belum diberikan persetujuan
+    consent_override_label: Apakah Anda ingin mengganti pengaturan ini?
+    is_remote_label: Apakah Anda memindahkan ke sistem remote?
+    location_label: Lokasi
+    notes_label: Catatan
+  user:
+    agency_office: 'Kantor Lembaga '
+    code: Kode Pengguna
+    disabled: Di non-aktifkan
+    full_name: Nama Lengkap
+    location: Lokasi
+    messages:
+      confirmation: Anda yakin ingin menghapus pengguna ini? Penghapusan tidak dapat dibatalkan. Tekan tombol OK Untuk Menghapus pengguna.
+      created: Pengguna sudah berhasil dibuat
+      not_found: Pengguna dengan id yang diberikan tidak ditemukan
+      password_changed_successfully: Kata sandi berhasil diubah
+      passwords_do_not_match: Tidak cocok dengan kata sandi saat ini
+      time_zone_updated: Perubahan itu berhasil diupdate.
+      updated: Pengguna berhasil diperbarui.
+    organization: Organisasi
+    position: Posisi
+    send_mail: Terima pemberitahuan email?
+  user_group:
+    description: Deksripsi
+    name: Nama
+  user_groups:
+    label: Grup Pengguna
+  users:
+    label: Pengguna

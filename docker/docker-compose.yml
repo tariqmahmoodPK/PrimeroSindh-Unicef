@@ -1,0 +1,45 @@
+---
+version: '3'
+services:
+  postgres:
+    image: '${PRIMERO_IMAGE_REPOSITORY:-primeroims}/postgres:${PRIMERO_TAG:-latest}'
+    volumes:
+      - database:/var/lib/postgresql/data
+    env_file:
+      - docker/defaults.env
+  solr:
+    image: '${PRIMERO_IMAGE_REPOSITORY:-primeroims}/solr:${PRIMERO_TAG:-latest}'
+    env_file:
+      - docker/defaults.env
+    volumes:
+      - solr_cores:/var/solr
+  application:
+    image: '${PRIMERO_IMAGE_REPOSITORY:-primeroims}/application:${PRIMERO_TAG:-latest}'
+    depends_on:
+      - solr
+      - postgres
+    volumes:
+      - public:/share/public
+      - storage:/srv/primero/application/storage
+    env_file:
+      - docker/defaults.env
+    stdin_open: true
+    tty: true
+  worker:
+    image: '${PRIMERO_IMAGE_REPOSITORY:-primeroims}/application:${PRIMERO_TAG:-latest}'
+    depends_on:
+      - solr
+      - postgres
+    volumes:
+      - storage:/srv/primero/application/storage
+    env_file:
+      - docker/defaults.env
+    command: ["rails", "jobs:work"]
+volumes:
+  database:
+  public:
+  solr_cores:
+  storage:
+  certbot_certificates:
+  certbot_challenges:
+  selfsigned_certs:

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <% if @case_type == 'Regular' %>
+      <p>Regular Case:</p>
+      <p>
+        This is an alert email for <%= @case_type %> case <%= @child.short_id %>, kindly complete Initial Assessment within 10 days of receiving the report on Protection Concerns. Please begin working on this as soon as possible.
+      </p>
+      <p>Due date to complete Initial Assessment is: <%= @due_date %></p>
+    <% else %>
+      <p>Emergency Case:</p>
+      <p>This is an alert email for <%= @case_type %> case <%= @child.short_id %>, kindly expedite the process to complete the Initial Assessment on time.</p>
+      <p>Initial assessment should be completed as soon as possible and no later than: <%= @due_date %></p>
+    <% end %>
+    <p>Refer to Case ID: <%= link_to(@child.short_id, @url + 'v2/cases/' + @child.id).html_safe %></p>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+.arrow {
+  color: $(theme.palette.common.black)
+}
+
+.tooltip {
+  background: $(theme.palette.common.black)
+}
+
+.disabled {
+  cursor: not-allowed;
+
+  & > div, & > label {
+    pointer-events: none;
+  }
+}

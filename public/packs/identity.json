@@ -1,0 +1,10 @@
+{
+  "entrypoints": {
+    "identity": {
+      "js": [
+        "http://localhost:9000/identity.1c8fbcee585bdc013095.js"
+      ]
+    }
+  },
+  "identity.js": "http://localhost:9000/identity.1c8fbcee585bdc013095.js"
+}

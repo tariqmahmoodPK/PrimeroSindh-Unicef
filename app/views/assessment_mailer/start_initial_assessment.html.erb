@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p><%= @case_type %> Case:</p>
+    <p>
+      This is an alert email for <%= @case_type %> case <%= @child.short_id %>, kindly start the Initial assessment
+      <% if @case_type == 'Regular' %>
+        within 72 hours of receipt of report on Child Protection Concern.
+      <% else %>
+        as soon as possible, and no later than 24 hours of receiving the report.
+      <% end %>
+    </p>
+    <p>Due date to end Initial Assessment is: <%= @due_date %></p>
+    <p>Refer to Case ID: <%= link_to(@child.short_id, @url + 'v2/cases/' + @child.id).html_safe %></p>
+  </body>
+</html>

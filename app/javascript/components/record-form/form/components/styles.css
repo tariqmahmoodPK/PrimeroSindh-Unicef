@@ -1,0 +1,95 @@
+.root {
+  width: 80%;
+
+  & p {
+    white-space: pre-wrap;
+    padding: 16px;
+  }
+}
+
+.content {
+  max-height: 12em;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.stepper {
+  max-width: 80%;
+  background: none;
+  padding: 0;
+
+  & div:first-of-type {
+    padding-left: 0;
+  }
+}
+
+.stepLabel,
+.mobileStepper div {
+  font-size: $(theme.typography.pxToRem(11));
+  font-weight: bold !important;
+  text-transform: uppercase;
+}
+
+.styleLabelActive, .mobileStepper {
+  color: $(theme.primero.colors.blue) !important;
+}
+
+.mobileStepper {
+  display: flex;
+  align-items: center;
+
+  & > span {
+    margin-right: 1.5em;
+    margin-left: 0.7em;
+  }
+}
+
+.importDataClass {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+
+  & button {
+    height: 22px;
+    margin-left: 5px;
+  }
+}
+
+.checkStatusLabelClass {
+  display: flex;
+  & > div {
+    margin-top: 0.1em;
+  }
+}
+
+.checkStatusClass {
+  & button {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
+
+@media $(theme.breakpoints.down("sm")) {
+  .importDataLabelClass {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .importDataClass {
+    & button {
+      margin-left: 0px;
+      margin-top: 8px;
+    }
+  }
+
+  .checkStatusClass {
+    & button {
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+  }
+}

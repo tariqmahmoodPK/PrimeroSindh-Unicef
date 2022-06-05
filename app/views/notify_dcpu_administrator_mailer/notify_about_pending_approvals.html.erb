@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>Case: <%= @child.name %></p>
+    <p>
+      Hi <b><%= @user.user_name %></b>, this is an alert email of 'pending closure approval' for case <%= @child.name %>, kindly approve the request ASAP.
+    </p>
+    <p>Date of case creation: <%= @child.created_at %></p>
+    <p>Refer to Case ID: <%= link_to(@child.short_id, @url + 'v2/cases/' + @child.id).html_safe %></p>
+  </body>
+</html>
