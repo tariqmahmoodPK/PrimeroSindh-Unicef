@@ -98,7 +98,7 @@ const Nav = () => {
       <Hidden smDown implementation="css">
         {/* <ModuleLogo username={username} /> */}
         <div className={css.box}>
-          <img src={ICTLogo} height="80px" width="100px" alt="Logo" />
+          <img src={ICTLogo} height="110px" width="100px" alt="Logo" />
           <p className={css.head}>Child Protection</p>
           <p className={css.head}>Information Management System</p>
           <p className={css.head}>Ministry of Human Rights</p>
