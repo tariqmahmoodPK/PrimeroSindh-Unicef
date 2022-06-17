@@ -21,7 +21,7 @@ all:
       # The other certbot/lets_encrypt variables are optional. Include only if using Let's Encrypt
       certbot_domain:
       - '{{ primero_host }}'
-      certbot_email: 'sara.raza@xprolabs.com'
+      certbot_email: 'muhammad.zunair@xprolabs.com'
       lets_encrypt_domain: '{{ primero_host }}'
       lets_encrypt_email: '{{ certbot_email }}'
       # Different for self-signed certs
