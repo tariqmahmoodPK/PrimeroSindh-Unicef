@@ -11,7 +11,7 @@
 
 - name: 'Pull Primero from Git'
   git:
-    repo: '{{ primero_repo|default("https://sararaza410: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@github.com/Khizar-Hussian/primero-pakistan-ICT.git") }}'
+    repo: '{{ primero_repo|default("https://sararaza410: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@github.com/Khizar-Hussian/primero-pakistan-sindh.git") }}'
     dest: '/srv/primero/'
     version: 'staging'
     key_file: '/root/.ssh/primero_deployment_key'

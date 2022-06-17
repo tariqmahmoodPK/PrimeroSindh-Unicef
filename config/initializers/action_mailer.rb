@@ -12,7 +12,7 @@ Rails.application.config.action_mailer.tap do |action_mailer|
     password: 'Mg68Aej2Q5YsBt9',
     address: 'smtp.socketlabs.com',
     port: 587,
-    domain: 'cpims-ict.septemsystems.com',
+    domain: 'cpims-sindh.septemsystems.com',
     authentication: 'login',
     enable_starttls_auto: true
   }
@@ -21,6 +21,6 @@ Rails.application.config.action_mailer.tap do |action_mailer|
 end
 
 ActionMailer::Base.default_url_options = {
-  host: 'cpims-ict.septemsystems.com',
+  host: 'cpims-sindh.septemsystems.com',
   protocol: 'https'
 }
