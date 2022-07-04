@@ -38,8 +38,8 @@ const Component = ({ children }) => {
           <div className={css.box}>
 
             <img src={SindhLogo} height="250px" width="240px" alt="Logo" />
-            <h2 className={css.head}>Child Protection - Information Management System</h2>
-            <h3 className={css.head}>Ministry of Human Rights</h3>
+            <h2 className={css.head}>Government of Sindh</h2>
+            {/* <h3 className={css.head}>s</h3> */}
           </div>
           <div className={css.authContainer}>
             <div className={css.auth}>
