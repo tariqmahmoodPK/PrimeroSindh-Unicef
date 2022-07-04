@@ -95,7 +95,137 @@ namespace :add_locations do
     Location.new(placename_en: 'Hyderabad City', location_code: 'HB01', admin_level: 2, type: 'tehsil', hierarchy_path: 'HB.HB01'),
     Location.new(placename_en: 'Hyderabad', location_code: 'HB02', admin_level: 2, type: 'tehsil', hierarchy_path: 'HB.HB02'),
     Location.new(placename_en: 'Latifabad', location_code: 'HB03', admin_level: 2, type: 'tehsil', hierarchy_path: 'HB.HB03'),
-    Location.new(placename_en: 'Qasimabad', location_code: 'HB04', admin_level: 2, type: 'tehsil', hierarchy_path: 'HB.HB04')
+    Location.new(placename_en: 'Qasimabad', location_code: 'HB04', admin_level: 2, type: 'tehsil', hierarchy_path: 'HB.HB04'),
+
+    Location.new(placename_en: 'Jamshoro', location_code: 'JM', admin_level: 1, type: 'district', hierarchy_path: 'JM'),
+
+    Location.new(placename_en: 'Kotri', location_code: 'JM01', admin_level: 2, type: 'tehsil', hierarchy_path: 'JM.JM01'),
+    Location.new(placename_en: 'Manjhand', location_code: 'JM02', admin_level: 2, type: 'tehsil', hierarchy_path: 'JM.JM02'),
+    Location.new(placename_en: 'Sehwan', location_code: 'JM03', admin_level: 2, type: 'tehsil', hierarchy_path: 'JM.JM03'),
+    Location.new(placename_en: 'Thano Bula Khan', location_code: 'JM04', admin_level: 2, type: 'tehsil', hierarchy_path: 'JM.JM04'),
+
+    Location.new(placename_en: 'Dadu', location_code: 'DD', admin_level: 1, type: 'district', hierarchy_path: 'DD'),
+
+    Location.new(placename_en: 'Dadu', location_code: 'DD01', admin_level: 2, type: 'tehsil', hierarchy_path: 'DD.DD01'),
+    Location.new(placename_en: 'Johi', location_code: 'DD02', admin_level: 2, type: 'tehsil', hierarchy_path: 'DD.DD02'),
+    Location.new(placename_en: 'Khairpur Nathan Shah', location_code: 'DD03', admin_level: 2, type: 'tehsil', hierarchy_path: 'DD.DD03'),
+    Location.new(placename_en: 'Mehar', location_code: 'DD04', admin_level: 2, type: 'tehsil', hierarchy_path: 'DD.DD04'),
+
+    Location.new(placename_en: 'Matiari', location_code: 'MT', admin_level: 1, type: 'district', hierarchy_path: 'MT'),
+
+    Location.new(placename_en: 'Hala', location_code: 'MT01', admin_level: 2, type: 'tehsil', hierarchy_path: 'MT.MT01'),
+    Location.new(placename_en: 'Matiari', location_code: 'MT02', admin_level: 2, type: 'tehsil', hierarchy_path: 'MT.MT02'),
+    Location.new(placename_en: 'Saeedabad', location_code: 'MT03', admin_level: 2, type: 'tehsil', hierarchy_path: 'MT.MT03'),
+
+    Location.new(placename_en: 'Tando Allahyar', location_code: 'TA', admin_level: 1, type: 'district', hierarchy_path: 'TA'),
+
+    Location.new(placename_en: 'Chamber', location_code: 'TA01', admin_level: 2, type: 'tehsil', hierarchy_path: 'TA.TA01'),
+    Location.new(placename_en: 'Jhando Mari', location_code: 'TA02', admin_level: 2, type: 'tehsil', hierarchy_path: 'TA.TA02'),
+    Location.new(placename_en: 'Tando Allahyar', location_code: 'TA03', admin_level: 2, type: 'tehsil', hierarchy_path: 'TA.TA03'),
+
+    Location.new(placename_en: 'Tando Muhammad Khan', location_code: 'TMK', admin_level: 1, type: 'district', hierarchy_path: 'TMK'),
+
+    Location.new(placename_en: 'Bulri Shah Karim', location_code: 'TMK01', admin_level: 2, type: 'tehsil', hierarchy_path: 'TMK.TMK01'),
+    Location.new(placename_en: 'Tando Ghulam Hyder', location_code: 'TMK02', admin_level: 2, type: 'tehsil', hierarchy_path: 'TMK.TMK02'),
+    Location.new(placename_en: 'Tando Muhammad Khan', location_code: 'TMK03', admin_level: 2, type: 'tehsil', hierarchy_path: 'TMK.TMK03'),
+
+    Location.new(placename_en: 'Badin', location_code: 'BD', admin_level: 1, type: 'district', hierarchy_path: 'BD'),
+
+    Location.new(placename_en: 'Badin', location_code: 'BD01', admin_level: 2, type: 'tehsil', hierarchy_path: 'BD.BD01'),
+    Location.new(placename_en: 'Matli', location_code: 'BD02', admin_level: 2, type: 'tehsil', hierarchy_path: 'BD.BD02'),
+    Location.new(placename_en: 'Shaheed Fazal Rahu', location_code: 'BD03', admin_level: 2, type: 'tehsil', hierarchy_path: 'BD.BD03'),
+    Location.new(placename_en: 'Talhar', location_code: 'BD04', admin_level: 2, type: 'tehsil', hierarchy_path: 'BD.BD04'),
+    Location.new(placename_en: 'Tando Bago', location_code: 'BD05', admin_level: 2, type: 'tehsil', hierarchy_path: 'BD.BD05'),
+
+    Location.new(placename_en: 'Thatta', location_code: 'TT', admin_level: 1, type: 'district', hierarchy_path: 'TT'),
+
+    Location.new(placename_en: 'Ghorabari', location_code: 'TT01', admin_level: 2, type: 'tehsil', hierarchy_path: 'TT.TT01'),
+    Location.new(placename_en: 'Keti Bunder', location_code: 'TT02', admin_level: 2, type: 'tehsil', hierarchy_path: 'TT.TT02'),
+    Location.new(placename_en: 'Mirpur Sakro', location_code: 'TT03', admin_level: 2, type: 'tehsil', hierarchy_path: 'TT.TT03'),
+    Location.new(placename_en: 'Thatta', location_code: 'TT04', admin_level: 2, type: 'tehsil', hierarchy_path: 'TT.TT04'),
+
+    Location.new(placename_en: 'Sujawal', location_code: 'SJ', admin_level: 1, type: 'district', hierarchy_path: 'SJ'),
+
+    Location.new(placename_en: 'Jati', location_code: 'SJ01', admin_level: 2, type: 'tehsil', hierarchy_path: 'SJ.SJ01'),
+    Location.new(placename_en: 'Kharo Chan', location_code: 'SJ02', admin_level: 2, type: 'tehsil', hierarchy_path: 'SJ.SJ02'),
+    Location.new(placename_en: 'Mirpur Bathoro', location_code: 'SJ03', admin_level: 2, type: 'tehsil', hierarchy_path: 'SJ.SJ03'),
+    Location.new(placename_en: 'Shah Bunder', location_code: 'SJ04', admin_level: 2, type: 'tehsil', hierarchy_path: 'SJ.SJ04'),
+    Location.new(placename_en: 'Sujawal', location_code: 'SJ05', admin_level: 2, type: 'tehsil', hierarchy_path: 'SJ.SJ05'),
+
+    Location.new(placename_en: 'Mirpur Khas', location_code: 'MPK', admin_level: 1, type: 'district', hierarchy_path: 'MPK'),
+
+    Location.new(placename_en: 'Digri', location_code: 'MPK01', admin_level: 2, type: 'tehsil', hierarchy_path: 'MPK.MPK01'),
+    Location.new(placename_en: 'Hussain Bux Marri', location_code: 'MPK02', admin_level: 2, type: 'tehsil', hierarchy_path: 'MPK.MPK02'),
+    Location.new(placename_en: 'Jhuddo', location_code: 'MPK03', admin_level: 2, type: 'tehsil', hierarchy_path: 'MPK.MPK03'),
+    Location.new(placename_en: 'Kot Ghulam Mohammad', location_code: 'MPK04', admin_level: 2, type: 'tehsil', hierarchy_path: 'MPK.MPK04'),
+    Location.new(placename_en: 'Mirpur Khas', location_code: 'MPK05', admin_level: 2, type: 'tehsil', hierarchy_path: 'MPK.MPK05'),
+    Location.new(placename_en: 'Shujabad', location_code: 'MPK06', admin_level: 2, type: 'tehsil', hierarchy_path: 'MPK.MPK06'),
+    Location.new(placename_en: 'Sindhri', location_code: 'MPK07', admin_level: 2, type: 'tehsil', hierarchy_path: 'MPK.MPK07'),
+
+    Location.new(placename_en: 'Tharparkar', location_code: 'TPK', admin_level: 1, type: 'district', hierarchy_path: 'TPK'),
+
+    Location.new(placename_en: 'Chachro', location_code: 'TPK01', admin_level: 2, type: 'tehsil', hierarchy_path: 'TPK.TPK01'),
+    Location.new(placename_en: 'Dhali', location_code: 'TPK02', admin_level: 2, type: 'tehsil', hierarchy_path: 'TPK.TPK02'),
+    Location.new(placename_en: 'Diplo', location_code: 'TPK03', admin_level: 2, type: 'tehsil', hierarchy_path: 'TPK.TPK03'),
+    Location.new(placename_en: 'Islamkot', location_code: 'TPK04', admin_level: 2, type: 'tehsil', hierarchy_path: 'TPK.TPK04'),
+    Location.new(placename_en: 'Kaloi', location_code: 'TPK05', admin_level: 2, type: 'tehsil', hierarchy_path: 'TPK.TPK05'),
+    Location.new(placename_en: 'Mithi', location_code: 'TPK06', admin_level: 2, type: 'tehsil', hierarchy_path: 'TPK.TPK06'),
+    Location.new(placename_en: 'Nagar Parkar', location_code: 'TPK07', admin_level: 2, type: 'tehsil', hierarchy_path: 'TPK.TPK07'),
+
+    Location.new(placename_en: 'Umerkot', location_code: 'UK', admin_level: 1, type: 'district', hierarchy_path: 'UK'),
+
+    Location.new(placename_en: 'Kunri', location_code: 'UK01', admin_level: 2, type: 'tehsil', hierarchy_path: 'UK.UK01'),
+    Location.new(placename_en: 'Pithoro', location_code: 'UK02', admin_level: 2, type: 'tehsil', hierarchy_path: 'UK.UK02'),
+    Location.new(placename_en: 'Samaro', location_code: 'UK03', admin_level: 2, type: 'tehsil', hierarchy_path: 'UK.UK03'),
+    Location.new(placename_en: 'Umerkot', location_code: 'UK04', admin_level: 2, type: 'tehsil', hierarchy_path: 'UK.UK04'),
+
+    Location.new(placename_en: 'Karachi East', location_code: 'KE', admin_level: 1, type: 'district', hierarchy_path: 'KE'),
+
+    Location.new(placename_en: 'Ferozabad', location_code: 'KE01', admin_level: 2, type: 'tehsil', hierarchy_path: 'KE.KE01'),
+    Location.new(placename_en: 'Gulshan-E-Iqbal', location_code: 'KE02', admin_level: 2, type: 'tehsil', hierarchy_path: 'KE.KE02'),
+    Location.new(placename_en: 'Gulzar-E-Hijri', location_code: 'KE03', admin_level: 2, type: 'tehsil', hierarchy_path: 'KE.KE03'),
+    Location.new(placename_en: 'Jamshed Quarter', location_code: 'KE04', admin_level: 2, type: 'tehsil', hierarchy_path: 'KE.KE04'),
+
+    Location.new(placename_en: 'Karachi West', location_code: 'KW', admin_level: 1, type: 'district', hierarchy_path: 'KW'),
+
+    Location.new(placename_en: 'Mauripur', location_code: 'KW01', admin_level: 2, type: 'tehsil', hierarchy_path: 'KW.KW01'),
+    Location.new(placename_en: 'Harbour', location_code: 'KW02', admin_level: 2, type: 'tehsil', hierarchy_path: 'KW.KW02'),
+    Location.new(placename_en: 'Orangi', location_code: 'KW03', admin_level: 2, type: 'tehsil', hierarchy_path: 'KW.KW03'),
+    Location.new(placename_en: 'Mominabad', location_code: 'KW04', admin_level: 2, type: 'tehsil', hierarchy_path: 'KW.KW04'),
+    Location.new(placename_en: 'Baldia', location_code: 'KW05', admin_level: 2, type: 'tehsil', hierarchy_path: 'KW.KW05'),
+    Location.new(placename_en: 'Manghopir', location_code: 'KW06', admin_level: 2, type: 'tehsil', hierarchy_path: 'KW.KW06'),
+
+    Location.new(placename_en: 'Karachi South', location_code: 'KS', admin_level: 1, type: 'district', hierarchy_path: 'KS'),
+
+    Location.new(placename_en: 'Aram Bagh', location_code: 'KS01', admin_level: 2, type: 'tehsil', hierarchy_path: 'KS.KS01'),
+    Location.new(placename_en: 'Civil Line', location_code: 'KS02', admin_level: 2, type: 'tehsil', hierarchy_path: 'KS.KS02'),
+    Location.new(placename_en: 'Garden', location_code: 'KS03', admin_level: 2, type: 'tehsil', hierarchy_path: 'KS.KS03'),
+    Location.new(placename_en: 'Lyari', location_code: 'KS04', admin_level: 2, type: 'tehsil', hierarchy_path: 'KS.KS04'),
+    Location.new(placename_en: 'Saddar Sub-Division', location_code: 'KS05', admin_level: 2, type: 'tehsil', hierarchy_path: 'KS.KS05'),
+
+    Location.new(placename_en: 'Karachi Central', location_code: 'KC', admin_level: 1, type: 'district', hierarchy_path: 'KC'),
+
+    Location.new(placename_en: 'Gulberg', location_code: 'KC01', admin_level: 2, type: 'tehsil', hierarchy_path: 'KC.KC01'),
+    Location.new(placename_en: 'Liaquatabad', location_code: 'KC02', admin_level: 2, type: 'tehsil', hierarchy_path: 'KC.KC02'),
+    Location.new(placename_en: 'Nazimabad', location_code: 'KC03', admin_level: 2, type: 'tehsil', hierarchy_path: 'KC.KC03'),
+    Location.new(placename_en: 'New Karachi', location_code: 'KC04', admin_level: 2, type: 'tehsil', hierarchy_path: 'KC.KC04'),
+    Location.new(placename_en: 'North Nazimabad', location_code: 'KC05', admin_level: 2, type: 'tehsil', hierarchy_path: 'KC.KC05'),
+
+    Location.new(placename_en: 'Malir', location_code: 'ML', admin_level: 1, type: 'district', hierarchy_path: 'ML'),
+
+    Location.new(placename_en: 'Airport', location_code: 'ML01', admin_level: 2, type: 'tehsil', hierarchy_path: 'ML.ML01'),
+    Location.new(placename_en: 'Bin Qasim', location_code: 'ML02', admin_level: 2, type: 'tehsil', hierarchy_path: 'ML.ML02'),
+    Location.new(placename_en: 'Gadab', location_code: 'ML03', admin_level: 2, type: 'tehsil', hierarchy_path: 'ML.ML03'),
+    Location.new(placename_en: 'Ibrahim Hyderi', location_code: 'ML04', admin_level: 2, type: 'tehsil', hierarchy_path: 'ML.ML04'),
+    Location.new(placename_en: 'Murad Memon', location_code: 'ML05', admin_level: 2, type: 'tehsil', hierarchy_path: 'ML.ML05'),
+    Location.new(placename_en: 'Shah Murad', location_code: 'ML06', admin_level: 2, type: 'tehsil', hierarchy_path: 'ML.ML06'),
+
+    Location.new(placename_en: 'Korangi', location_code: 'KRG', admin_level: 1, type: 'district', hierarchy_path: 'KRG'),
+
+    Location.new(placename_en: 'Korangi', location_code: 'KRG01', admin_level: 2, type: 'tehsil', hierarchy_path: 'KRG.KRG01'),
+    Location.new(placename_en: 'Landhi', location_code: 'Korangi02', admin_level: 2, type: 'tehsil', hierarchy_path: 'KRG.KRG02'),
+    Location.new(placename_en: 'Madol Colony', location_code: 'Korangi03', admin_level: 2, type: 'tehsil', hierarchy_path: 'KRG.KRG03'),
+    Location.new(placename_en: 'Shah Faisal', location_code: 'Korangi04', admin_level: 2, type: 'tehsil', hierarchy_path: 'KRG.KRG04'),
   ]
   Location.locations_by_code = locations.map { |l| [l.location_code, l] }.to_h
 
