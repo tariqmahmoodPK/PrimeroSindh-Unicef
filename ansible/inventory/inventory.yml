@@ -11,7 +11,7 @@ all:
       # These 3 variables are used to drive the build task.
       # Can be omitted if pulling images from Dockerhub
       primero_repo_branch: 'staging'
-      build_docker_tag: 'sindh'
+      build_docker_tag: 'latest'
       build_docker_container_registry: ''
       # If you want to seed from a private configuration repo
       # primero_configuration_repo: 'git@github.com:brishnabatool/primero-pakistan.git'
