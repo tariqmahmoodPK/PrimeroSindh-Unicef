@@ -42,20 +42,20 @@ const ranges = [
     label: "None"
   },
   {
+    value: "emergency_custody_order",
+    label: "Emergency Custody Order"
+  },
+  {
+    value: "non-emergency_alternative_care_placement_order",
+    label: "Non-Emergency Alternative Care Placement Order"
+  },
+  {
     value: "supervision_order",
     label: "Supervision Order"
   },
   {
-    value: "custody_and_placement_order",
-    label: "Custody and Placement Order"
-  },
-  {
     value: "seek_and_find_order",
     label: "Seek and Find Order"
-  },
-  {
-    value: "interim_order",
-    label: "Interim Order"
   }
 ];
 
