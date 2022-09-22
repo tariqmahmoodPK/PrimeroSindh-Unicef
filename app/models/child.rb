@@ -96,17 +96,17 @@ class Child < ApplicationRecord
   end
 
   def auto_fill_initial_assessment_due_date
-    return unless self.data['do_you_want_to_enable_auto_scheduling__9f716bf'].present?
+    return unless self.data['do_you_want_to_enable_auto_scheduling__aa172e5'].present?
 
-    is_this_significant_harm_case = self.data["is_this_a__significant_harm__case_or_a_regular_case__d49a084"]
+    is_this_significant_harm_case = self.data["is_this_a_significant_harm_case__b343242"]
     registration_date = self.data["date_and_time_registration_was_completed_529de5d"]
 
     return if registration_date.blank?
 
     if is_this_significant_harm_case.present?
-      data["due_date_for_initial_assessment_0e82430"] = registration_date.to_date + 3.days
+      data["due_date_for_initial_assessment_0e82430"] = registration_date.to_date + 1.days
     else
-      data["due_date_for_initial_assessment_0e82430"] = registration_date.to_date + 7.days
+      data["due_date_for_initial_assessment_0e82430"] = registration_date.to_date + 3.days
     end
   end
 
