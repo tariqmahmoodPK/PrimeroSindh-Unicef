@@ -1434,7 +1434,7 @@ end
 
   def self.get_service_provided_childs_with_age_type_of_violence
     cases = Child.search do
-      without(:child_s_age_f2599ad, nil)
+      # without(:child_s_age_f2599ad, nil)
       without(:physical_violence_d20dedd, nil)
       without(:psychological_violence_a24a68c, nil)
       without(:neglect_or_negligent_treatment_affdf36, nil)
@@ -1442,7 +1442,7 @@ end
       without(:sexual_abuse___violence___exploitation_e621d56, nil)     
     end
     search = Child.search do
-      without(:child_s_age_f2599ad, nil)
+      # without(:child_s_age_f2599ad, nil)
       without(:physical_violence_d20dedd, nil)
       without(:psychological_violence_a24a68c, nil)
       without(:neglect_or_negligent_treatment_affdf36, nil)
@@ -1496,7 +1496,7 @@ end
   end
 
   def self.services_provided_by_age_and_violence(user)
-    return { permission: false } unless user.role.name.in? ['Focal Person', 'Referral']
+    # return { permission: false } unless user.role.name.in? ['Focal Person', 'Referral']
 
     stats = { "labels" => [
       "Physical Violence or Injury",
@@ -1515,26 +1515,27 @@ end
         }
       ]
     }
+
     Child.get_service_provided_childs_with_age_type_of_violence.results.each do |child|
       age = child.data["child_s_age_f2599ad"]
-      
-      if child.data["physical_violence_d20dedd"].present?
+
+      if child.data["physical_violence_d20dedd"].present? && child.data["physical_violence_d20dedd"] != "not_applicable_445274"
         stats["data"][0]["dataset"][0] += 1 if age.in?(0..9)
         stats["data"][1]["dataset"][0] += 1 if age.in?(10..17)
       end
-      if child.data["psychological_violence_a24a68c"].present?
+      if child.data["psychological_violence_a24a68c"].present? && child.data["psychological_violence_a24a68c"] != "not_applicable_363335"
         stats["data"][0]["dataset"][1] += 1 if age.in?(0..9)
         stats["data"][1]["dataset"][1] += 1 if age.in?(10..17)
       end
-      if child.data["neglect_or_negligent_treatment_affdf36"].present?
+      if child.data["neglect_or_negligent_treatment_affdf36"].present? && child.data["neglect_or_negligent_treatment_affdf36"] != "not_applicable_817549"
         stats["data"][0]["dataset"][2] += 1 if age.in?(0..9)
         stats["data"][1]["dataset"][2] += 1 if age.in?(10..17)
       end
-      if child.data["economic_exploitation_338c19d"].present?
+      if child.data["economic_exploitation_338c19d"].present? && child.data["economic_exploitation_338c19d"] != "not_applicable_974773"
         stats["data"][0]["dataset"][3] += 1 if age.in?(0..9)
         stats["data"][1]["dataset"][3] += 1 if age.in?(10..17)
       end
-      if child.data["sexual_abuse___violence___exploitation_e621d56"].present?
+      if child.data["sexual_abuse___violence___exploitation_e621d56"].present? && child.data["sexual_abuse___violence___exploitation_e621d56"] != "not_applicable_95956"
         stats["data"][0]["dataset"][4] += 1 if age.in?(0..9)
         stats["data"][1]["dataset"][4] += 1 if age.in?(10..17)
       end
