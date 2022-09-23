@@ -209,7 +209,7 @@ class Child < ApplicationRecord
   before_update :check_for_starting_initial_assessment
 
   alias super_defaults defaults
-  def defaults
+  def defaultsprotection_concern_stats
     super_defaults
     self.notes_section ||= []
   end
@@ -1434,19 +1434,24 @@ end
 
   def self.get_service_provided_childs_with_age_type_of_violence
     cases = Child.search do
-      without(:make__if_other__please_specify__appear_dynamically_83aa4ee, nil)
       without(:child_s_age_f2599ad, nil)
-      without(:types_of_abuse_fc733c0, nil)
+      without(:physical_violence_d20dedd, nil)
+      without(:psychological_violence_a24a68c, nil)
+      without(:neglect_or_negligent_treatment_affdf36, nil)
+      without(:economic_exploitation_338c19d, nil)
+      without(:sexual_abuse___violence___exploitation_e621d56, nil)     
     end
-
     search = Child.search do
-      without(:make__if_other__please_specify__appear_dynamically_83aa4ee, nil)
       without(:child_s_age_f2599ad, nil)
-      without(:types_of_abuse_fc733c0, nil)
+      without(:physical_violence_d20dedd, nil)
+      without(:psychological_violence_a24a68c, nil)
+      without(:neglect_or_negligent_treatment_affdf36, nil)
+      without(:economic_exploitation_338c19d, nil)
+      without(:sexual_abuse___violence___exploitation_e621d56, nil)     
       paginate :page => 1, :per_page => cases.total
     end
-
     search
+    
   end
 
   def self.referred_resolved_cases_by_department(user)
@@ -1510,30 +1515,30 @@ end
         }
       ]
     }
-      
     Child.get_service_provided_childs_with_age_type_of_violence.results.each do |child|
       age = child.data["child_s_age_f2599ad"]
-      child.data["types_of_abuse_fc733c0"].each do |concern|
-        case concern
-        when "arrested_detained"
-          stats["data"][0]["dataset"][0] += 1 if age.in?(0..9)
-          stats["data"][1]["dataset"][0] += 1 if age.in?(10..17)
-        when "statelessness"
-          stats["data"][0]["dataset"][1] += 1 if age.in?(0..9)
-          stats["data"][1]["dataset"][1] += 1 if age.in?(10..17)
-        when "trafficked_smuggled"
-          stats["data"][0]["dataset"][2] += 1 if age.in?(0..9)
-          stats["data"][1]["dataset"][2] += 1 if age.in?(10..17)
-        when "gbv_survivor"
-          stats["data"][0]["dataset"][3] += 1 if age.in?(0..9)
-          stats["data"][1]["dataset"][3] += 1 if age.in?(10..17)
-        when "sexually_exploited"
-          stats["data"][0]["dataset"][4] += 1 if age.in?(0..9)
-          stats["data"][1]["dataset"][4] += 1 if age.in?(10..17)
-        end
+      
+      if child.data["physical_violence_d20dedd"].present?
+        stats["data"][0]["dataset"][0] += 1 if age.in?(0..9)
+        stats["data"][1]["dataset"][0] += 1 if age.in?(10..17)
+      end
+      if child.data["psychological_violence_a24a68c"].present?
+        stats["data"][0]["dataset"][1] += 1 if age.in?(0..9)
+        stats["data"][1]["dataset"][1] += 1 if age.in?(10..17)
+      end
+      if child.data["neglect_or_negligent_treatment_affdf36"].present?
+        stats["data"][0]["dataset"][2] += 1 if age.in?(0..9)
+        stats["data"][1]["dataset"][2] += 1 if age.in?(10..17)
+      end
+      if child.data["economic_exploitation_338c19d"].present?
+        stats["data"][0]["dataset"][3] += 1 if age.in?(0..9)
+        stats["data"][1]["dataset"][3] += 1 if age.in?(10..17)
+      end
+      if child.data["sexual_abuse___violence___exploitation_e621d56"].present?
+        stats["data"][0]["dataset"][4] += 1 if age.in?(0..9)
+        stats["data"][1]["dataset"][4] += 1 if age.in?(10..17)
       end
     end
-
     stats
   end
 
