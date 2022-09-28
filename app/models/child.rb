@@ -1450,8 +1450,8 @@ end
       without(:sexual_abuse___violence___exploitation_e621d56, nil)     
       paginate :page => 1, :per_page => cases.total
     end
+
     search
-    
   end
 
   def self.referred_resolved_cases_by_department(user)
@@ -1540,6 +1540,7 @@ end
         stats["data"][1]["dataset"][4] += 1 if age.in?(10..17)
       end
     end
+  
     stats
   end
 
