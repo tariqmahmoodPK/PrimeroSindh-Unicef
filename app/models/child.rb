@@ -1627,15 +1627,21 @@ end
 
   def self.get_service_provided_childs_with_gender_type_of_violence
     cases = Child.search do
-      without(:make__if_other__please_specify__appear_dynamically_83aa4ee, nil)
       without(:child_s_sex_2fe5059, nil)
-      without(:types_of_abuse_fc733c0, nil)
+      without(:child_s_age_f2599ad, nil)
+      without(:physical_violence_d20dedd, nil)
+      without(:psychological_violence_a24a68c, nil)
+      without(:neglect_or_negligent_treatment_affdf36, nil)
+      without(:economic_exploitation_338c19d, nil)
     end
 
     search = Child.search do
-      without(:make__if_other__please_specify__appear_dynamically_83aa4ee, nil)
       without(:child_s_sex_2fe5059, nil)
-      without(:types_of_abuse_fc733c0, nil)
+      without(:child_s_age_f2599ad, nil)
+      without(:physical_violence_d20dedd, nil)
+      without(:psychological_violence_a24a68c, nil)
+      without(:neglect_or_negligent_treatment_affdf36, nil)
+      without(:economic_exploitation_338c19d, nil)
       paginate :page => 1, :per_page => cases.total
     end
 
@@ -1681,19 +1687,25 @@ end
     Child.get_service_provided_childs_with_gender_type_of_violence.each do |child|
       sex = child.data["child_s_sex_2fe5059"]
       obj = get_object_against_sex(sex)
-      child.data["types_of_abuse_fc733c0"].each do |concern|
-        case concern
-        when "arrested_detained"
-          stats["data"][obj]["dataset"][0] += 1
-        when "statelessness"
-          stats["data"][obj]["dataset"][1] += 1
-        when "trafficked_smuggled"
-          stats["data"][obj]["dataset"][2] += 1
-        when "gbv_survivor"
-          stats["data"][obj]["dataset"][3] += 1
-        when "sexually_exploited"
-          stats["data"][obj]["dataset"][4] += 1
-        end
+
+      if child.data["physical_violence_d20dedd"].present? && child.data["physical_violence_d20dedd"] != "not_applicable_445274"
+        stats["data"][obj]["dataset"][0] += 1
+      end
+
+      if child.data["psychological_violence_a24a68c"].present? && child.data["psychological_violence_a24a68c"] != "not_applicable_363335"
+        stats["data"][obj]["dataset"][1] += 1
+      end
+
+      if child.data["neglect_or_negligent_treatment_affdf36"].present? && child.data["neglect_or_negligent_treatment_affdf36"] != "not_applicable_817549"
+        stats["data"][obj]["dataset"][2] += 1
+      end
+
+      if child.data["economic_exploitation_338c19d"].present? && child.data["economic_exploitation_338c19d"] != "not_applicable_974773"
+        stats["data"][obj]["dataset"][3] += 1
+      end
+
+      if child.data["sexual_abuse___violence___exploitation_e621d56"].present? && child.data["sexual_abuse___violence___exploitation_e621d56"] != "not_applicable_95956"
+        stats["data"][obj]["dataset"][4] += 1
       end
     end
 
