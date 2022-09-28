@@ -1497,7 +1497,7 @@ end
   end
 
   def self.services_provided_by_age_and_violence(user)
-    return { permission: false } unless user.role.name.in? ['Focal Person', 'Referral']
+    return { permission: false } if user.role.name.in? ['Focal Person', 'Referral']
 
     stats = { "labels" => [
       "Physical Violence or Injury",
@@ -1660,7 +1660,7 @@ end
   end
 
   def self.services_provided_by_gender_and_violence(user)
-    return { permission: false } unless user.role.name.in? ['Focal Person', 'Referral']
+    return { permission: false } if user.role.name.in? ['Focal Person', 'Referral']
 
     stats = { "labels" => [
       "Physical Violence or Injury",
