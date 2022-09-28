@@ -209,7 +209,7 @@ class Child < ApplicationRecord
   before_update :check_for_starting_initial_assessment
 
   alias super_defaults defaults
-  def defaultsprotection_concern_stats
+  def defaults
     super_defaults
     self.notes_section ||= []
   end
@@ -1434,7 +1434,7 @@ end
 
   def self.get_service_provided_childs_with_age_type_of_violence
     cases = Child.search do
-      # without(:child_s_age_f2599ad, nil)
+      without(:child_s_age_f2599ad, nil)
       without(:physical_violence_d20dedd, nil)
       without(:psychological_violence_a24a68c, nil)
       without(:neglect_or_negligent_treatment_affdf36, nil)
@@ -1442,7 +1442,7 @@ end
       without(:sexual_abuse___violence___exploitation_e621d56, nil)     
     end
     search = Child.search do
-      # without(:child_s_age_f2599ad, nil)
+      without(:child_s_age_f2599ad, nil)
       without(:physical_violence_d20dedd, nil)
       without(:psychological_violence_a24a68c, nil)
       without(:neglect_or_negligent_treatment_affdf36, nil)
@@ -1496,7 +1496,7 @@ end
   end
 
   def self.services_provided_by_age_and_violence(user)
-    # return { permission: false } unless user.role.name.in? ['Focal Person', 'Referral']
+    return { permission: false } unless user.role.name.in? ['Focal Person', 'Referral']
 
     stats = { "labels" => [
       "Physical Violence or Injury",
