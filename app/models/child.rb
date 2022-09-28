@@ -1441,6 +1441,7 @@ end
       without(:economic_exploitation_338c19d, nil)
       without(:sexual_abuse___violence___exploitation_e621d56, nil)     
     end
+
     search = Child.search do
       without(:child_s_age_f2599ad, nil)
       without(:physical_violence_d20dedd, nil)
@@ -1540,7 +1541,7 @@ end
         stats["data"][1]["dataset"][4] += 1 if age.in?(10..17)
       end
     end
-  
+
     stats
   end
 
