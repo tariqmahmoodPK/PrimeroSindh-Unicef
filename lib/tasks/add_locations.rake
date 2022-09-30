@@ -197,13 +197,13 @@ namespace :add_locations do
     Location.new(placename_en: 'Baldia', location_code: 'KW05', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KW01.KW05'),
     Location.new(placename_en: 'Manghopir', location_code: 'KW06', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KW01.KW06'),
 
-    # Location.new(placename_en: 'Karachi South', location_code: 'KHOUTH01', admin_level: 2, type: 'district', hierarchy_path: 'SIN.KSOUTH01'),
+    Location.new(placename_en: 'Karachi South', location_code: 'KS1', admin_level: 2, type: 'district', hierarchy_path: 'SIN.KS1'),
 
-    # Location.new(placename_en: 'Aram Bagh', location_code: 'KSOUTH0101', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KSOUTH01.KS0101'),
-    # Location.new(placename_en: 'Civil Line', location_code: 'KSOUTH02', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KSOUTH01.KSOUTH02'),
-    # Location.new(placename_en: 'Garden', location_code: 'KSOUTH03', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KSOUTH01.KSOUTH03'),
-    # Location.new(placename_en: 'Lyari', location_code: 'KSOUTH04', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KSOUTH01.KSOUTH04'),
-    # Location.new(placename_en: 'Saddar Sub-Division', location_code: 'KSOUTH05', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KSOUTH01.KSOUTH05'),
+    Location.new(placename_en: 'Aram Bagh', location_code: 'KS2', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KS1.KS2'),
+    Location.new(placename_en: 'Civil Line', location_code: 'KS3', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KS1.KS3'),
+    Location.new(placename_en: 'Garden', location_code: 'KS4', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KS1.KS4'),
+    Location.new(placename_en: 'Lyari', location_code: 'KS5', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KS1.KS5'),
+    Location.new(placename_en: 'Saddar Sub-Division', location_code: 'KS6', admin_level: 3, type: 'tehsil', hierarchy_path: 'SIN.KS1.KS6'),
 
     Location.new(placename_en: 'Karachi Central', location_code: 'KC01', admin_level: 2, type: 'district', hierarchy_path: 'SIN.KC01'),
 
