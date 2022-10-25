@@ -952,7 +952,7 @@ end
           "sexually_exploited": 0
         }
       end
-      
+
       cases["#{child.data["child_s_age_f2599ad"]}"].each do |key, value|
         if child.data["physical_violence_d20dedd"].present? && child.data["physical_violence_d20dedd"] != "not_applicable_445274"
           cases["#{child.data["child_s_age_f2599ad"]}"][:arrested_detained] += 1
