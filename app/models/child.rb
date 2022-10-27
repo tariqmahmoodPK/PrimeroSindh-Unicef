@@ -1235,13 +1235,13 @@ end
   def self.get_cases_assigned_to_specific_user(user, significant_harm = nil, registered = nil)
     cases = Child.search do
       with(:owned_by, user.user_name)
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       without(:date_and_time_registration_was_completed_529de5d, nil) if registered.present?
     end
 
     search = Child.search do
       with(:owned_by, user.user_name)
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       without(:date_and_time_registration_was_completed_529de5d, nil) if registered.present?
       paginate :page => 1, :per_page => cases.total
     end
