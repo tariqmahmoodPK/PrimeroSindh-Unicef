@@ -566,9 +566,25 @@ end
     total_case_count = Child.get_childs(user, "significant", "registered").count
     Child.get_childs(user, "significant").each do |child|
       stats.each do |key, value|
-        next unless key.to_s.in? child.protection_concerns
+        if child.data["physical_violence_d20dedd"].present? && child.data["physical_violence_d20dedd"] != "not_applicable_445274"
+          stats[:arrested_detained][:cases] += 1
+        end
 
-        stats[key][:cases] += 1
+        if child.data["psychological_violence_a24a68c"].present? && child.data["psychological_violence_a24a68c"] != "not_applicable_363335"
+          stats[:statelessness][:cases] += 1
+        end
+
+        if child.data["neglect_or_negligent_treatment_affdf36"].present? && child.data["neglect_or_negligent_treatment_affdf36"] != "not_applicable_817549"
+          stats[:trafficked_smuggled][:cases] += 1
+        end
+
+        if child.data["economic_exploitation_338c19d"].present? && child.data["economic_exploitation_338c19d"] != "not_applicable_974773"
+          stats[:gbv_survivor][:cases] += 1
+        end
+
+        if child.data["sexual_abuse___violence___exploitation_e621d56"].present? && child.data["sexual_abuse___violence___exploitation_e621d56"] != "not_applicable_95956"
+          stats[:sexually_exploited][:cases] += 1
+        end
       end
     end.count
 
@@ -628,7 +644,7 @@ end
   def self.get_cases_with_district_and_agency(user, significant_harm = nil)
     usernames = user.agency.users.pluck(:user_name)
     cases = Child.search do
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476', true) if significant_harm.present?
       any_of do
         with(:owned_by, usernames)
         with(:owned_by_location, user.location)
@@ -636,7 +652,7 @@ end
     end
 
     search = Child.search do
-       with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+       with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       any_of do
         with(:owned_by, usernames)
         with(:owned_by_location, user.location)
@@ -708,7 +724,7 @@ end
     province = with_province(user)
     search = Child.search do
       with(:status, "closed")
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       any_of do
         with(:owned_by, usernames)
         with(:owned_by_location, province)
@@ -1219,13 +1235,13 @@ end
   def self.get_cases_assigned_to_specific_user(user, significant_harm = nil, registered = nil)
     cases = Child.search do
       with(:owned_by, user.user_name)
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       without(:date_and_time_registration_was_completed_529de5d, nil) if registered.present?
     end
 
     search = Child.search do
       with(:owned_by, user.user_name)
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       without(:date_and_time_registration_was_completed_529de5d, nil) if registered.present?
       paginate :page => 1, :per_page => cases.total
     end
@@ -1849,12 +1865,12 @@ end
     usernames = user_groups.first.users.pluck(:user_name)
     cases = Child.search do
       with(:owned_by, usernames)
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
     end
 
     search = Child.search do
       with(:owned_by, usernames)
-      with(:is_this_a__significant_harm__case_or_a_regular_case__d49a084, true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       paginate :page => 1, :per_page => cases.total
     end
 
