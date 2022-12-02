@@ -566,7 +566,7 @@ class User < ApplicationRecord
     user_data["Focal Person"] = user_data.delete "Referral"
 
     location_codes.each do |location_code|
-      users["labels"] << location_hash.detect { |code| code[location_code.to_sym] }.values.last
+      users["labels"] << location_hash.detect { |code| code[location_code.to_sym] }
     end
 
     rgba_code = [0, 255, 128]
