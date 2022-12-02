@@ -926,8 +926,8 @@ end
       any_of do
         with(:is_child_an_ethnic_minority__5d99703, true)
         with(:is_child_a_religious_minority__48d6e93, true)
-        with(:are_parents_guardians_bisp_beneficiary__ac4c758, true)
-        without(:type_of_disability_b97c7ca, nil)
+        with(:are_parents_guardians_beneficiaries_of_the_following__687cec6, true)
+        without(:does_the_child_have_any_disability__b40314f, nil)
       end
     end
 
@@ -947,8 +947,8 @@ end
 
     demographic_cases.results.each do |child|
       stats["No. of Minority Cases"] += 1 if child.data["is_child_an_ethnic_minority__5d99703"] || child.data["is_child_a_religious_minority__48d6e93"]
-      stats["No. of Children with Disabilities (CWB)"] += 1 if child.data["type_of_disability_b97c7ca"].present?
-      stats["No. of BISP Beneficiaries"] += 1 if child.data["are_parents_guardians_bisp_beneficiary__ac4c758"]
+      stats["No. of Children with Disabilities (CWB)"] += 1 if child.data["does_the_child_have_any_disability__b40314f"].present?
+      stats["No. of BISP Beneficiaries"] += 1 if child.data["are_parents_guardians_beneficiaries_of_the_following__687cec6"]
     end
 
     stats_final = [stats["No. of Minority Cases"], stats["No. of Children with Disabilities (CWB)"], stats["No. of BISP Beneficiaries"]]
@@ -1060,8 +1060,8 @@ end
       any_of do
         with(:is_child_an_ethnic_minority__5d99703, true)
         with(:is_child_a_religious_minority__48d6e93, true)
-        with(:are_parents_guardians_bisp_beneficiary__ac4c758, true)
-        without(:type_of_disability_b97c7ca, nil)
+        with(:are_parents_guardians_beneficiaries_of_the_following__687cec6, true)
+        without(:does_the_child_have_any_disability__b40314f, nil)
       end
     end
 
