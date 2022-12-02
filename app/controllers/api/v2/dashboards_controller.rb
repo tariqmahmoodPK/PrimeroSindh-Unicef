@@ -57,9 +57,9 @@ class Api::V2::DashboardsController < ApplicationApiController
     @stats = Child.referred_resolved_cases_by_department(current_user)
   end
 
-  def services_provided_by_age_and_violence
-    @stats = Child.services_provided_by_age_and_violence(current_user)
-  end
+  # def services_provided_by_age_and_violence
+  #   @stats = Child.services_provided_by_age_and_violence(current_user)
+  # end
 
   def alternative_care_placement_by_gender
     @stats = Child.alternative_care_placement_by_gender(current_user)
@@ -81,9 +81,9 @@ class Api::V2::DashboardsController < ApplicationApiController
     @stats = Child.cases_receiving_services_by_gender(current_user)
   end
 
-  def services_provided_by_gender_and_violence
-    @stats = Child.services_provided_by_gender_and_violence(current_user)
-  end
+  # def services_provided_by_gender_and_violence
+  #   @stats = Child.services_provided_by_gender_and_violence(current_user)
+  # end
 
   def registered_resolved_by_gender_and_age
     @cases = Child.registered_resolved_by_gender_and_age(current_user)
