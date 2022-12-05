@@ -840,9 +840,9 @@ end
     districts = Location.with_type_district
 
     Child.get_registered_and_resolved_cases.results.each do |child|
-      next unless child.data["location_current"].in? districts
+      next unless child.data["owned_by_location"].in? districts
 
-      location = Location.find_by_location_code(child.location_current)&.placename_en
+      location = Location.find_by_location_code(child.owned_by_location)&.placename_en
       stats[location] = {registered_cases: 0, resolved_cases: 0} unless stats[location]
       stats[location][:registered_cases] += 1 if child.data["child_s_age_f2599ad"].present? && child.data["status"].eql?("open")
       stats[location][:resolved_cases] += 1 if (child.data["case_goals_all_met_601e9c9"] || child.data["case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44"]) && child.data["status"].eql?("closed")
