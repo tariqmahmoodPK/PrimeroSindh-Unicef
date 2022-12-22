@@ -74,14 +74,14 @@ class Child < ApplicationRecord
                                                       .where('data @> ?', { is_this_a__significant_harm__case__03fe116: true }.to_json)
                                                     }
   scope :pending_cases_to_assigned, -> (user_names) { where("data ->> 'owned_by' = data ->> 'created_by' ").where("data->'owned_by' ?| array[:options]", options: user_names) }
-  scope :with_province, ->(user) { where("data ->> :key LIKE :value", :key => "owned_by_location", :value => "#{user.location.first(3)}%" ).where('data @> ?', { is_this_a__significant_harm__case_or_a_regular_case__d49a084: true }.to_json) }
+  scope :with_province, ->(user) { where("data ->> :key LIKE :value", :key => "owned_by_location", :value => "SIN%" ).where('data @> ?', { is_this_a_significant_harm_case__b343242: 'yes_174476' }.to_json) }
   scope :with_district, ->(user) { where("data @> ?", { owned_by_location: user.location }.to_json) }
   scope :with_department, ->(agency) { where("data @> ?", { owned_by_agency_id: agency }.to_json) }
   scope :with_approvals_subforms, -> { where("data @> ?", { approval_subforms: [] }.to_json) }
   scope :attachment_with_specific_type, -> (user_names, document_type) { includes(:attachments).where("data->'owned_by' ?| array[:options]", options: user_names)
                                                                    .where(attachments: { type_of_document: document_type }) }
   scope :attachment_with_specific_type_and_user, -> (username, document_type) { includes(:attachments).where("data @> ?", { owned_by: username }.to_json).where(attachments: { type_of_document: document_type }) }
-  scope :attachment_with_specific_type_and_province, -> (user, document_type) { includes(:attachments).where("data ->> :key LIKE :value", :key => "owned_by_location", :value => "#{user.location.first(3)}%").where(attachments: { type_of_document: document_type }) }
+  scope :attachment_with_specific_type_and_province, -> (user, document_type) { includes(:attachments).where("data ->> :key LIKE :value", :key => "owned_by_location", :value => "SIN%").where(attachments: { type_of_document: document_type }) }
   scope :check_for_alternate_care_placement_with_user, -> (username) { find_by_sql("SELECT * FROM cases 
                                                               WHERE data->>'make__if_other__please_specify__appear_dynamically_83aa4ee' IS NOT NULL AND
                                                               (data->>'owned_by' = '#{username}')::boolean is true") }
@@ -642,7 +642,7 @@ end
   def self.get_cases_with_district_and_agency(user, significant_harm = nil)
     usernames = user.agency.users.pluck(:user_name)
     cases = Child.search do
-      with(:is_this_a_significant_harm_case__b343242, 'yes_174476', true) if significant_harm.present?
+      with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
       any_of do
         with(:owned_by, usernames)
         with(:owned_by_location, user.location)
@@ -723,14 +723,14 @@ end
     search = Child.search do
       with(:status, "closed")
       with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
-      any_of do
-        with(:owned_by, usernames)
-        with(:owned_by_location, province)
-      end
-      any_of do
-        with(:case_goals_all_met_601e9c9, true)
-        with(:case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44, true)
-      end
+      # any_of do
+      #   with(:owned_by, usernames)
+      #   with(:owned_by_location, province)
+      # end
+      # any_of do
+      #   with(:case_goals_all_met_601e9c9, true)
+      #   with(:case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44, true)
+      # end
     end
 
     search.results
@@ -742,19 +742,19 @@ end
     cases = Child.search do
       with(:status, "closed")
       with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
-      any_of do
-        with(:owned_by, usernames)
-        with(:owned_by_location, province)
-      end
+      # any_of do
+      #   with(:owned_by, usernames)
+      #   with(:owned_by_location, province)
+      # end
     end
 
     search = Child.search do
       with(:status, "closed")
       with(:is_this_a_significant_harm_case__b343242, 'yes_174476') if significant_harm.present?
-      any_of do
-        with(:owned_by, usernames)
-        with(:owned_by_location, province)
-      end
+      # any_of do
+      #   with(:owned_by, usernames)
+      #   with(:owned_by_location, province)
+      # end
       paginate :page => 1, :per_page => cases.total
     end
 
@@ -840,9 +840,9 @@ end
     districts = Location.with_type_district
 
     Child.get_registered_and_resolved_cases.results.each do |child|
-      next unless child.data["location_current"].in? districts
+      next unless child.data["owned_by_location"].in? districts
 
-      location = Location.find_by_location_code(child.location_current)&.placename_en
+      location = Location.find_by_location_code(child.owned_by_location)&.placename_en
       stats[location] = {registered_cases: 0, resolved_cases: 0} unless stats[location]
       stats[location][:registered_cases] += 1 if child.data["child_s_age_f2599ad"].present? && child.data["status"].eql?("open")
       stats[location][:resolved_cases] += 1 if (child.data["case_goals_all_met_601e9c9"] || child.data["case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44"]) && child.data["status"].eql?("closed")
@@ -926,8 +926,8 @@ end
       any_of do
         with(:is_child_an_ethnic_minority__5d99703, true)
         with(:is_child_a_religious_minority__48d6e93, true)
-        with(:are_parents_guardians_bisp_beneficiary__ac4c758, true)
-        without(:type_of_disability_b97c7ca, nil)
+        with(:are_parents_guardians_beneficiaries_of_the_following__687cec6, true)
+        without(:does_the_child_have_any_disability__b40314f, nil)
       end
     end
 
@@ -947,8 +947,8 @@ end
 
     demographic_cases.results.each do |child|
       stats["No. of Minority Cases"] += 1 if child.data["is_child_an_ethnic_minority__5d99703"] || child.data["is_child_a_religious_minority__48d6e93"]
-      stats["No. of Children with Disabilities (CWB)"] += 1 if child.data["type_of_disability_b97c7ca"].present?
-      stats["No. of BISP Beneficiaries"] += 1 if child.data["are_parents_guardians_bisp_beneficiary__ac4c758"]
+      stats["No. of Children with Disabilities (CWB)"] += 1 if child.data["does_the_child_have_any_disability__b40314f"].present?
+      stats["No. of BISP Beneficiaries"] += 1 if child.data["are_parents_guardians_beneficiaries_of_the_following__687cec6"]
     end
 
     stats_final = [stats["No. of Minority Cases"], stats["No. of Children with Disabilities (CWB)"], stats["No. of BISP Beneficiaries"]]
@@ -1060,8 +1060,8 @@ end
       any_of do
         with(:is_child_an_ethnic_minority__5d99703, true)
         with(:is_child_a_religious_minority__48d6e93, true)
-        with(:are_parents_guardians_bisp_beneficiary__ac4c758, true)
-        without(:type_of_disability_b97c7ca, nil)
+        with(:are_parents_guardians_beneficiaries_of_the_following__687cec6, true)
+        without(:does_the_child_have_any_disability__b40314f, nil)
       end
     end
 
@@ -1535,11 +1535,11 @@ end
     return { permission: false } if user.role.name.in? ['Focal Person', 'Referral']
 
     stats = { "labels" => [
-      "Physical Violence or Injury",
-      "Mental Violence",
-      "Neglect and Negligent Treatment",
-      "Exploitation",
-      "Sexual Abuse and Sexual Exploitation"
+      "Physical Abuse",
+      "Psychological Violence",
+      "Neglect / Negligent Treatment",
+      "Economic Exploitation",
+      "Sexual Abuse / Violence / Exploitation"
       ], "data" => [
         {
           "name" => "0..9",
@@ -1698,11 +1698,11 @@ end
     return { permission: false } if user.role.name.in? ['Focal Person', 'Referral']
 
     stats = { "labels" => [
-      "Physical Violence or Injury",
-      "Mental Violence",
-      "Neglect and Negligent Treatment",
-      "Exploitation",
-      "Sexual Abuse and Sexual Exploitation"
+      "Physical Abuse",
+      "Psychological Violence",
+      "Neglect / Negligent Treatment",
+      "Economic Exploitation",
+      "Sexual Abuse / Violence / Exploitation"
       ], "data" => [
         {
           "name" => "Male",

@@ -73,31 +73,31 @@ const Component = () => {
       labels,
       datasets: [
         {
-          label: "Exploitation",
+          label: "Economic Exploitation",
           data: one,
           backgroundColor: "rgba(255, 99, 132)",
           stack: "Stack 0"
         },
         {
-          label: "Mental Violence",
+          label: "Psychological Violence",
           data: two,
           backgroundColor: "rgba(255, 159, 64)",
           stack: "Stack 0"
         },
         {
-          label: "Neglect and Negligent Treatment",
+          label: "Neglect / Negligent Treatment",
           data: three,
           backgroundColor: "rgba(75, 192, 192)",
           stack: "Stack 0"
         },
         {
-          label: "Physical Violence or Injury",
+          label: "Physical Abuse",
           data: four,
           backgroundColor: "rgba(54, 162, 235)",
           stack: "Stack 0"
         },
         {
-          label: "Sexual Abuse and Sexual Exploitation",
+          label: "Sexual Abuse / Violence / Exploitation",
           data: five,
           backgroundColor: "rgba(153, 102, 255)",
           stack: "Stack 0"
