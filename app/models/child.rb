@@ -1387,10 +1387,10 @@ end
     cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "interim_custody_placement_order").size if role.eql?("CPO")
     cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "seek_and_find_order").size if role.eql?("CPO")
 
-    cases["supervision_order"] = Child.attachment_with_specific_type_and_province(user, "supervision_order").size
-    cases["permanent_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "permanent_custody_placement_order").size
-    cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "interim_custody_placement_order").size
-    cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_province(user, "seek_and_find_order").size
+    cases["supervision_order"] = Child.attachment_with_specific_type_and_province(user, "supervision_order").size if role.eql?("CP Manager")
+    cases["permanent_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "permanent_custody_placement_order").size if role.eql?("CP Manager")
+    cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "interim_custody_placement_order").size if role.eql?("CP Manager")
+    cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_province(user, "seek_and_find_order").size if role.eql?("CP Manager")
 
     cases_array = [cases["supervision_order"], cases["permanent_custody_placement_order"], cases["interim_custody_placement_order"], cases["seek_and_find_order"]]
     cases_array
