@@ -1326,7 +1326,7 @@ end
 
     statuses["stats"]["Role"] = role_name
     statuses["stats"]["Number of Cases"] = Child.count
-    statuses["stats"]["data"] = { "Registered (Open)": registered_cases, "Emergency Cases": harm_cases }
+    statuses["stats"]["data"] = { "Registered (Open)": registered_cases, "Significant Harm": harm_cases }
     statuses["stats"]["data"].merge!("Pending Approval for Closure": Child.pending_cases_to_assigned(user.user_groups.first.users.pluck(:user_name)).size) if role_name.eql?("CPI In-charge")
     statuses["stats"]["data"].merge!("Closed": closed_cases) if role_name.in? ["CPI In-charge", "CPO"]
     statuses["stats"]["data"].merge!("Assigned to Me": Child.get_cases_assigned_to_specific_user(user).total) if role_name.eql?("CPO")
