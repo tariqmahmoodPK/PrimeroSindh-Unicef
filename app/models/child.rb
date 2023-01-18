@@ -565,24 +565,27 @@ end
 
     total_case_count = Child.get_childs(user, "significant", "registered").count
     Child.get_childs(user, "significant").each do |child|
-      if child.data["physical_violence_d20dedd"].present? && child.data["physical_violence_d20dedd"] != "not_applicable_445274"
-        stats[:arrested_detained][:cases] += 1
-      end
+      
+      if child.data["response_to_goal_cd94ee4"] && ["service_provided_3d98e3e"].present?
+        if child.data["physical_violence_d20dedd"].present? && child.data["physical_violence_d20dedd"] != "not_applicable_445274"
+          stats[:arrested_detained][:cases] += 1
+        end
 
-      if child.data["psychological_violence_a24a68c"].present? && child.data["psychological_violence_a24a68c"] != "not_applicable_363335"
-        stats[:statelessness][:cases] += 1
-      end
+        if child.data["psychological_violence_a24a68c"].present? && child.data["psychological_violence_a24a68c"] != "not_applicable_363335"
+          stats[:statelessness][:cases] += 1
+        end
 
-      if child.data["neglect_or_negligent_treatment_affdf36"].present? && child.data["neglect_or_negligent_treatment_affdf36"] != "not_applicable_817549"
-        stats[:trafficked_smuggled][:cases] += 1
-      end
+        if child.data["neglect_or_negligent_treatment_affdf36"].present? && child.data["neglect_or_negligent_treatment_affdf36"] != "not_applicable_817549"
+          stats[:trafficked_smuggled][:cases] += 1
+        end
 
-      if child.data["economic_exploitation_338c19d"].present? && child.data["economic_exploitation_338c19d"] != "not_applicable_974773"
-        stats[:gbv_survivor][:cases] += 1
-      end
+        if child.data["economic_exploitation_338c19d"].present? && child.data["economic_exploitation_338c19d"] != "not_applicable_974773"
+          stats[:gbv_survivor][:cases] += 1
+        end
 
-      if child.data["sexual_abuse___violence___exploitation_e621d56"].present? && child.data["sexual_abuse___violence___exploitation_e621d56"] != "not_applicable_95956"
-        stats[:sexually_exploited][:cases] += 1
+        if child.data["sexual_abuse___violence___exploitation_e621d56"].present? && child.data["sexual_abuse___violence___exploitation_e621d56"] != "not_applicable_95956"
+          stats[:sexually_exploited][:cases] += 1
+        end
       end
     end.count
 
@@ -1326,7 +1329,7 @@ end
 
     statuses["stats"]["Role"] = role_name
     statuses["stats"]["Number of Cases"] = Child.count
-    statuses["stats"]["data"] = { "Registered (Open)": registered_cases, "Emergency Cases": harm_cases }
+    statuses["stats"]["data"] = { "Registered (Open)": registered_cases, "Significant Harm": harm_cases }
     statuses["stats"]["data"].merge!("Pending Approval for Closure": Child.pending_cases_to_assigned(user.user_groups.first.users.pluck(:user_name)).size) if role_name.eql?("CPI In-charge")
     statuses["stats"]["data"].merge!("Closed": closed_cases) if role_name.in? ["CPI In-charge", "CPO"]
     statuses["stats"]["data"].merge!("Assigned to Me": Child.get_cases_assigned_to_specific_user(user).total) if role_name.eql?("CPO")
@@ -1387,10 +1390,10 @@ end
     cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "interim_custody_placement_order").size if role.eql?("CPO")
     cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "seek_and_find_order").size if role.eql?("CPO")
 
-    cases["supervision_order"] = Child.attachment_with_specific_type_and_province(user, "supervision_order").size
-    cases["permanent_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "permanent_custody_placement_order").size
-    cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "interim_custody_placement_order").size
-    cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_province(user, "seek_and_find_order").size
+    cases["supervision_order"] = Child.attachment_with_specific_type_and_province(user, "supervision_order").size if role.eql?("CP Manager")
+    cases["permanent_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "permanent_custody_placement_order").size if role.eql?("CP Manager")
+    cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "interim_custody_placement_order").size if role.eql?("CP Manager")
+    cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_province(user, "seek_and_find_order").size if role.eql?("CP Manager")
 
     cases_array = [cases["supervision_order"], cases["permanent_custody_placement_order"], cases["interim_custody_placement_order"], cases["seek_and_find_order"]]
     cases_array
