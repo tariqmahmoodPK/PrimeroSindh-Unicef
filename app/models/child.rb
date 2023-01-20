@@ -1377,25 +1377,25 @@ end
     return { permission: false } unless ['CPI In-charge', 'CPO', 'CP Manager'].include?(role)
 
     cases = {
-      "supervision_order" => 0, "permanent_custody_placement_order" => 0, "interim_custody_placement_order" => 0, "seek_and_find_order" => 0
+      "supervision_order" => 0, "emergency_custody_order" => 0, "non-emergency_alternative_care_placement_order" => 0, "seek_and_find_order" => 0
     }
 
     cases["supervision_order"] = Child.attachment_with_specific_type(user.user_groups.first.users.pluck(:user_name), "supervision_order").size if role.eql?("CPI In-charge")
-    cases["permanent_custody_placement_order"] = Child.attachment_with_specific_type(user.user_groups.first.users.pluck(:user_name), "permanent_custody_placement_order").size if role.eql?("CPI In-charge")
-    cases["interim_custody_placement_order"] = Child.attachment_with_specific_type(user.user_groups.first.users.pluck(:user_name), "interim_custody_placement_order").size if role.eql?("CPI In-charge")
+    cases["emergency_custody_order"] = Child.attachment_with_specific_type(user.user_groups.first.users.pluck(:user_name), "emergency_custody_order").size if role.eql?("CPI In-charge")
+    cases["non-emergency_alternative_care_placement_order"] = Child.attachment_with_specific_type(user.user_groups.first.users.pluck(:user_name), "non-emergency_alternative_care_placement_order").size if role.eql?("CPI In-charge")
     cases["seek_and_find_order"] = Child.attachment_with_specific_type(user.user_groups.first.users.pluck(:user_name), "seek_and_find_order").size if role.eql?("CPI In-charge")
 
     cases["supervision_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "supervision_order").size if role.eql?("CPO")
-    cases["permanent_custody_placement_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "permanent_custody_placement_order").size if role.eql?("CPO")
-    cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "interim_custody_placement_order").size if role.eql?("CPO")
+    cases["emergency_custody_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "emergency_custody_order").size if role.eql?("CPO")
+    cases["non-emergency_alternative_care_placement_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "non-emergency_alternative_care_placement_order").size if role.eql?("CPO")
     cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_user(user.user_name, "seek_and_find_order").size if role.eql?("CPO")
 
     cases["supervision_order"] = Child.attachment_with_specific_type_and_province(user, "supervision_order").size if role.eql?("CP Manager")
-    cases["permanent_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "permanent_custody_placement_order").size if role.eql?("CP Manager")
-    cases["interim_custody_placement_order"] = Child.attachment_with_specific_type_and_province(user, "interim_custody_placement_order").size if role.eql?("CP Manager")
+    cases["emergency_custody_order"] = Child.attachment_with_specific_type_and_province(user, "emergency_custody_order").size if role.eql?("CP Manager")
+    cases["non-emergency_alternative_care_placement_order"] = Child.attachment_with_specific_type_and_province(user, "non-emergency_alternative_care_placement_order").size if role.eql?("CP Manager")
     cases["seek_and_find_order"] = Child.attachment_with_specific_type_and_province(user, "seek_and_find_order").size if role.eql?("CP Manager")
 
-    cases_array = [cases["supervision_order"], cases["permanent_custody_placement_order"], cases["interim_custody_placement_order"], cases["seek_and_find_order"]]
+    cases_array = [cases["supervision_order"], cases["emergency_custody_order"], cases["non-emergency_alternative_care_placement_order"], cases["seek_and_find_order"]]
     cases_array
   end
 
