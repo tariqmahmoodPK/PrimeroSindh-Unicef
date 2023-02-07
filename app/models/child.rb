@@ -840,7 +840,8 @@ end
     return { permission: false } unless user.role.name.eql?('CP Manager')
 
     stats = {}
-    districts = Location.with_type_district
+    # districts = Location.with_type_district
+    districts = Location.pluck(:location_code)
 
     Child.get_registered_and_resolved_cases.results.each do |child|
       next unless child.data["owned_by_location"].in? districts
@@ -848,7 +849,8 @@ end
       location = Location.find_by_location_code(child.owned_by_location)&.placename_en
       stats[location] = {registered_cases: 0, resolved_cases: 0} unless stats[location]
       stats[location][:registered_cases] += 1 if child.data["child_s_age_f2599ad"].present? && child.data["status"].eql?("open")
-      stats[location][:resolved_cases] += 1 if (child.data["case_goals_all_met_601e9c9"] || child.data["case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44"]) && child.data["status"].eql?("closed")
+      # stats[location][:resolved_cases] += 1 if (child.data["case_goals_all_met_601e9c9"] || child.data["case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44"]) && child.data["status"].eql?("closed")
+      stats[location][:resolved_cases] += 1 if child.data["status"].eql?("closed")
     end
 
     stats
@@ -1239,13 +1241,13 @@ end
 
   def self.get_registered_and_resolved_cases
     search = Child.search do
-      any_of do
+      # any_of do
       without(:child_s_age_f2599ad, nil)
-        any_of do
-          with(:case_goals_all_met_601e9c9, true)
-          with(:case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44, true)
-        end
-      end
+        # any_of do
+        #   with(:case_goals_all_met_601e9c9, true)
+        #   with(:case_goals_substantially_met_and_there_is_no_child_protection_concern_b0f5a44, true)
+        # end
+      # end
     end
 
     search
