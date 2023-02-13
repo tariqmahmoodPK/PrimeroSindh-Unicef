@@ -840,8 +840,7 @@ end
     return { permission: false } unless user.role.name.eql?('CP Manager')
 
     stats = {}
-    # districts = Location.with_type_district
-    districts = Location.pluck(:location_code)
+    districts = Location.with_type_district
 
     Child.get_registered_and_resolved_cases.results.each do |child|
       next unless child.data["owned_by_location"].in? districts
