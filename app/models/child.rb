@@ -63,6 +63,7 @@ class Child < ApplicationRecord
 
   before_save :update_basic_info, :auto_fill_comprehensive_assessment_date, :auto_fill_initial_assessment_due_date, :auto_fill_survivor_under_18_check_box, :auto_fill_necessity_principle_to_seprate_child_from_harm_prepetrating_individual
 
+
   has_many :incidents, foreign_key: :incident_case_id
   has_many :matched_traces, class_name: 'Trace', foreign_key: 'matched_case_id'
   has_many :duplicates, class_name: 'Child', foreign_key: 'duplicate_case_id'
@@ -109,7 +110,6 @@ class Child < ApplicationRecord
       data["due_date_for_initial_assessment_0e82430"] = registration_date.to_date + 3.days
     end
   end
-
 
   def auto_fill_survivor_under_18_check_box
     age = data["child_s_age_f2599ad"]
@@ -840,7 +840,8 @@ end
     return { permission: false } unless user.role.name.eql?('CP Manager')
 
     stats = {}
-    districts = Location.with_type_district
+    # districts = Location.with_type_district
+    districts = Location.pluck(:location_code)
 
     Child.get_registered_and_resolved_cases.results.each do |child|
       next unless child.data["owned_by_location"].in? districts
