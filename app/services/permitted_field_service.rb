@@ -89,6 +89,7 @@ class PermittedFieldService
     @permitted_field_names += %w[workflow status case_status_reopened] if model_class == Child
     @permitted_field_names << 'tracing_names' if model_class == TracingRequest
     @permitted_field_names << 'hidden_name' if user.can?(:update, model_class)
+    @permitted_field_names << 'name' if user.role.name.eql?("CPHO")
     @permitted_field_names += %w[flag_count flagged] if user.can?(:flag, model_class)
     @permitted_field_names += SYNC_FIELDS_SCHEMA.keys if external_sync?
     @permitted_field_names += permitted_incident_field_names
