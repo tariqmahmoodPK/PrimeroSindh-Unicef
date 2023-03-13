@@ -2061,12 +2061,17 @@ end
   
   def self.get_role_wise_workflow(user)
     role_name = user.role.name
-    return { "permission" => false } unless role_name.eql?('CPI In-charge')
+    agency_id = user.agency_id
+    if role_name.eql?('DCPU Admin')
+      usernames = User.where(agency_id: agency_id).pluck(:user_name)
+    elsif role_name.eql?('CPI In-charge')
+      location_codes = Location.where("cast(hierarchy_path as text) LIKE ?", "%#{Location.find_by(location_code: user.location).hierarchy_path.split('.').second}%").pluck(:location_code)
 
-    location_codes = Location.where("cast(hierarchy_path as text) LIKE ?", "%#{Location.find_by(location_code: user.location).hierarchy_path.split('.').second}%").pluck(:location_code)
-
-    usernames = [user.user_name]
-    usernames << User.includes(:role).where(location: location_codes, roles: {name: "CPO"}).pluck(:user_name)
+      usernames = [user.user_name]
+      usernames << User.includes(:role).where(location: location_codes, roles: {name: "CPO"}).pluck(:user_name)
+    else
+      return { "permission" => false }
+    end
     cases = {
       "registration" => 0,
       "assessment" => 0,
