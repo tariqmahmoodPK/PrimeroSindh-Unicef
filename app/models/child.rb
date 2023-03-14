@@ -283,8 +283,8 @@ class Child < ApplicationRecord
     interview_date = self.data['date_of_the_interview_13c582b']
     return if initial_assessment_started.blank? || interview_date.blank?
 
-    return if interview_date.to_date > initial_assessment_started.to_date
-    errors.add :base, :invalid, message: "Interview date should be after initial assessment start date."
+    return if interview_date > initial_assessment_started
+    errors.add :base, :invalid, message: "Interview date & time should be after initial assessment start date & time."
   end
 
   def validate_date_report_was_received
