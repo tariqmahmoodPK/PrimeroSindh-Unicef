@@ -43,7 +43,7 @@ class UserTransitionService
 
     users = User.where(disabled: false).where.not(id: transitioned_by_user.id)
 
-    return with_assign_scope(users) if transition == Assign.name
+    return with_assign_scope(users).uniq if transition == Assign.name
 
     apply_filters(with_receive_permission(users), filters)
   end
